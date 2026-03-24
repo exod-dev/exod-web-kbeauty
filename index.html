@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- =========================INTRO SPLASH 필요 없으면 이 블록 전체 삭제하면 됨========================= -->
+    <div class="intro-splash" id="introSplash" aria-hidden="true">
+      <div class="intro-splash__inner">
+        <span class="intro-splash__text">EXOD INTERNATIONAL</span>
+      </div>
+    </div>
     <header class="topbar">
       <div class="topbar__inner">
         <a href="#home" class="brand magnetic">EXOD<span>.</span></a>
@@ -142,12 +148,6 @@
                 <em>Like The Next Favorite</em>
               </h2>
             </div>
-
-            <p class="about-intro">
-              We help Korean beauty brands land in North America with the kind of
-              visual mood, product energy, and premium finish that beauty shoppers
-              actually want to keep on their vanity.
-            </p>
           </div>
 
           <div class="about-layout">
@@ -178,13 +178,6 @@
                   <small>We stay close after launch so curiosity becomes re-buys, shelf presence, and long-term beauty loyalty.</small>
                 </span>
               </button>
-
-              <div class="about-highlight" id="aboutHighlight">
-                <span class="about-highlight__label">Current highlight</span>
-                <p class="about-highlight__text">
-                  The sweet spot is simple: aspirational enough to save, polished enough to trust, and good enough to keep reaching for.
-                </p>
-              </div>
             </div>
 
             <div class="about-stage about-stage--culture" id="aboutStage">
@@ -229,8 +222,9 @@
       </div>
 
       <p class="brands-heading__copy">
-        Hand-selected. Rigorously vetted. Each brand in our portfolio
-        represents the best of what Korea has to offer.
+        We work with trusted, viral brands imported
+        directly from Korea through the exclusivity with
+        HQ or trusted vendors.
       </p>
     </div>
 
@@ -266,6 +260,10 @@
       <a class="brand-tile brand-tile--candidate magnetic" href="#" data-brand="round-lab">
         <span class="brand-tile__name">ROUND LAB</span>
       </a>
+      <a class="brand-tile"><span>HERA</span></a>
+      <a class="brand-tile"><span>DR. JART+</span></a>
+      <a class="brand-tile"><span>IOPE</span></a>
+      <a class="brand-tile"><span>SKINFOOD</span></a>
     </div>
 
     <div class="brands-actions">
@@ -273,81 +271,6 @@
     </div>
   </div>
 </section>
-
-<section class="brand-showcase-section" id="brand-showcase">
-  <div class="container brand-showcase-shell">
-    <div class="brand-showcase-heading">
-      <div>
-        <div class="brand-showcase-kicker">FEATURED BRANDS</div>
-        <h2 class="brand-showcase-title">
-          <span>The</span>
-          <em>Showcase</em>
-        </h2>
-      </div>
-
-      <p class="brand-showcase-copy">
-        A refined brand strip designed to let hero visuals speak first.
-      </p>
-    </div>
-
-    <div class="brand-showcase-grid" aria-label="brand showcase highlights">
-      <a class="brand-showcase-card magnetic" href="#" data-brand="laneige">
-        <div class="brand-showcase-media">
-          <img class="brand-showcase-main" src="image/brands/laneige-main.png" alt="LANEIGE" />
-          <div class="brand-showcase-overlay">
-            <span class="brand-showcase-name">LANEIGE</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="brand-showcase-card magnetic" href="#" data-brand="sulwhasoo">
-        <div class="brand-showcase-media">
-          <img class="brand-showcase-main" src="image/brands/sulwhasoo-main.png" alt="SULWHASOO" />
-          <div class="brand-showcase-overlay">
-            <span class="brand-showcase-name">SULWHASOO</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="brand-showcase-card magnetic" href="#" data-brand="cosrx">
-        <div class="brand-showcase-media">
-          <img class="brand-showcase-main" src="image/brands/cosrx-main.png" alt="COSRX" />
-          <div class="brand-showcase-overlay">
-            <span class="brand-showcase-name">COSRX</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="brand-showcase-card magnetic" href="#" data-brand="etude-house">
-        <div class="brand-showcase-media">
-          <img class="brand-showcase-main" src="image/brands/etude-house-main.png" alt="ETUDE HOUSE" />
-          <div class="brand-showcase-overlay">
-            <span class="brand-showcase-name">ETUDE HOUSE</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="brand-showcase-card magnetic" href="#" data-brand="innisfree">
-        <div class="brand-showcase-media">
-          <img class="brand-showcase-main" src="image/brands/innisfree-main.png" alt="INNISFREE" />
-          <div class="brand-showcase-overlay">
-            <span class="brand-showcase-name">INNISFREE</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="brand-showcase-card magnetic" href="#" data-brand="round-lab">
-        <div class="brand-showcase-media">
-          <img class="brand-showcase-main" src="image/brands/round-lab-main.png" alt="ROUND LAB" />
-          <div class="brand-showcase-overlay">
-            <span class="brand-showcase-name">ROUND LAB</span>
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
     
 <section class="opportunity-section" id="opportunity">
   <div class="container opportunity-shell">
@@ -462,40 +385,101 @@
       </div>
     </div>
 
-    <div class="partner-network-grid">
-      <a class="partner-network-card magnetic" href="#" aria-label="Big box retail partners">
-        <div class="partner-network-card__image partner-network-card__image--mass"></div>
+    <div class="partner-network-grid partner-network-grid--eight">
+      <a class="partner-network-card magnetic" href="#" aria-label="Mass retail partners">
+        <div class="partner-network-card__image partner-network-card__image--mass-retail"></div>
         <div class="partner-network-card__overlay"></div>
         <div class="partner-network-card__copy">
-          <span>TARGET, WALMART, COSTCO</span>
-          <strong>BIG BOX RETAIL</strong>
+          <span class="partner-network-card__eyebrow">Mass Retail</span>
+          <div class="partner-network-card__partners">
+            <span>SHOPPERS</span>
+            <span>WALMART</span>
+            <span>LOBLAW</span>
+          </div>
         </div>
       </a>
 
-      <a class="partner-network-card magnetic" href="#" aria-label="Specialty beauty partners">
-        <div class="partner-network-card__image partner-network-card__image--beauty"></div>
+      <a class="partner-network-card magnetic" href="#" aria-label="Warehouse value partners">
+        <div class="partner-network-card__image partner-network-card__image--warehouse"></div>
         <div class="partner-network-card__overlay"></div>
         <div class="partner-network-card__copy">
-          <span>SEPHORA, ULTA, CREDO</span>
-          <strong>SPECIALTY BEAUTY</strong>
+          <span class="partner-network-card__eyebrow">Warehouse Value</span>
+          <div class="partner-network-card__partners">
+            <span>COSTCO</span>
+          </div>
         </div>
       </a>
 
-      <a class="partner-network-card magnetic" href="#" aria-label="Online platform partners">
-        <div class="partner-network-card__image partner-network-card__image--digital"></div>
+      <a class="partner-network-card magnetic" href="#" aria-label="Asian supermarket partners">
+        <div class="partner-network-card__image partner-network-card__image--asian-market"></div>
         <div class="partner-network-card__overlay"></div>
         <div class="partner-network-card__copy">
-          <span>AMAZON, TIKTOK SHOP, DTC</span>
-          <strong>ONLINE PLATFORMS</strong>
+          <span class="partner-network-card__eyebrow">Asian Supermarkets</span>
+          <div class="partner-network-card__partners">
+            <span>GALLERIA</span>
+            <span>H MART</span>
+            <span>T&amp;T</span>
+          </div>
         </div>
       </a>
 
-      <a class="partner-network-card magnetic" href="#" aria-label="Independent retail partners">
-        <div class="partner-network-card__image partner-network-card__image--indie"></div>
+      <a class="partner-network-card magnetic" href="#" aria-label="Asian beauty and culture partners">
+        <div class="partner-network-card__image partner-network-card__image--asian-culture"></div>
         <div class="partner-network-card__overlay"></div>
         <div class="partner-network-card__copy">
-          <span>BOUTIQUES, PHARMACIES, SPAS</span>
-          <strong>INDEPENDENT RETAIL</strong>
+          <span class="partner-network-card__eyebrow">Asian Beauty &amp; Culture</span>
+          <div class="partner-network-card__partners">
+            <span>SUKOSHI</span>
+            <span>KIOKII</span>
+            <span>OOMOMO</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="partner-network-card magnetic" href="#" aria-label="Mainstream supermarket partners">
+        <div class="partner-network-card__image partner-network-card__image--supermarket"></div>
+        <div class="partner-network-card__overlay"></div>
+        <div class="partner-network-card__copy">
+          <span class="partner-network-card__eyebrow">Mainstream Supermarkets</span>
+          <div class="partner-network-card__partners">
+            <span>REAL CANADIAN</span>
+            <span>SUPERSTORE</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="partner-network-card magnetic" href="#" aria-label="Health and wellness partners">
+        <div class="partner-network-card__image partner-network-card__image--wellness"></div>
+        <div class="partner-network-card__overlay"></div>
+        <div class="partner-network-card__copy">
+          <span class="partner-network-card__eyebrow">Health &amp; Wellness</span>
+          <div class="partner-network-card__partners">
+            <span>WELL.CA</span>
+            <span>HEALTHY PLANET</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="partner-network-card magnetic" href="#" aria-label="Luxury department partners">
+        <div class="partner-network-card__image partner-network-card__image--luxury"></div>
+        <div class="partner-network-card__overlay"></div>
+        <div class="partner-network-card__copy">
+          <span class="partner-network-card__eyebrow">Luxury Department</span>
+          <div class="partner-network-card__partners">
+            <span>HOLT RENFREW</span>
+            <span>RENNAÏ</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="partner-network-card magnetic" href="#" aria-label="Digital marketplace partners">
+        <div class="partner-network-card__image partner-network-card__image--marketplace"></div>
+        <div class="partner-network-card__overlay"></div>
+        <div class="partner-network-card__copy">
+          <span class="partner-network-card__eyebrow">Digital Marketplace</span>
+          <div class="partner-network-card__partners">
+            <span>AMAZON</span>
+          </div>
         </div>
       </a>
     </div>
@@ -999,8 +983,84 @@
   });
 
   /* =========================================================
+     INTRO SPLASH
+     필요 없으면 이 함수 + initIntroSplash() 호출 삭제
+  ========================================================= */
+  const initIntroSplash = () => {
+    const intro = document.getElementById('introSplash');
+    if (!intro) return;
+
+    // 필요하면 시간 조절:
+    // 1600 = 1.6초
+    const INTRO_DURATION = 1600;
+
+    window.setTimeout(() => {
+      intro.classList.add('is-hidden');
+    }, INTRO_DURATION);
+  };
+
+  /* =========================================================
+     SMART HEADER
+     - 첫 hero에서는 글자만 보이게
+     - hover하면 배경 살짝
+     - 스크롤하면 점점 밝아짐
+     - hero 지나면 solid header
+     필요 없으면 이 함수 통째로 삭제 가능
+  ========================================================= */
+  const initSmartHeader = () => {
+    const topbar = document.querySelector('.topbar');
+    const hero = document.querySelector('.hero');
+
+    if (!topbar || !hero) return;
+
+    const setHeaderState = () => {
+      const heroHeight = hero.offsetHeight;
+      const y = window.scrollY;
+      const progress = Math.min(y / Math.max(heroHeight * 0.85, 1), 1);
+
+      // 첫 화면 여부
+      const inHeroZone = y < heroHeight - 120;
+      document.body.classList.toggle('header-hero', inHeroZone);
+
+      // 스크롤 조금만 되어도 active
+      topbar.classList.toggle('is-scrolled', y > 10);
+
+      // hero 거의 끝나면 solid
+      topbar.classList.toggle('is-solid', y > heroHeight - 140);
+
+      // 점진 밝기
+      const bgAlpha = 0.08 + (0.82 * progress);
+      const lineAlpha = 0.02 + (0.08 * progress);
+      const blurValue = 2 + (12 * progress);
+      const shadowAlpha = 0.01 + (0.07 * progress);
+
+      topbar.style.setProperty('--header-bg-alpha', bgAlpha.toFixed(3));
+      topbar.style.setProperty('--header-line-alpha', lineAlpha.toFixed(3));
+      topbar.style.setProperty('--header-blur', blurValue.toFixed(2));
+      topbar.style.setProperty('--header-shadow-alpha', shadowAlpha.toFixed(3));
+    };
+
+    // 첫 hero에서 hover 시 잠깐 배경 느낌
+    topbar.addEventListener('mouseenter', () => {
+      if (document.body.classList.contains('header-hero')) {
+        document.body.classList.add('header-hover');
+      }
+    });
+
+    topbar.addEventListener('mouseleave', () => {
+      document.body.classList.remove('header-hover');
+    });
+
+    window.addEventListener('scroll', setHeaderState, { passive: true });
+    window.addEventListener('resize', setHeaderState);
+    setHeaderState();
+  };
+
+  /* =========================================================
      BOOT
   ========================================================= */
+  initIntroSplash();
+  initSmartHeader();
   initAboutTabs();
   initBrandPreviews();
   initShowcaseCards();

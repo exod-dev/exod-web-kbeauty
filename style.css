@@ -768,13 +768,13 @@ textarea {
 
 .brands-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 20px 24px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px;
 }
 
 .brand-tile {
   position: relative;
-  min-height: 196px;
+  min-height: 130px;
   border-radius: 24px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.16)), var(--brands-panel);
   border: 1px solid var(--brands-panel-border);
@@ -783,7 +783,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 22px;
+  padding: 16px;
   isolation: isolate;
   transition:
     transform 0.32s ease,
@@ -2846,4 +2846,465 @@ textarea {
     scroll-behavior: auto !important;
   }
   .ticker { animation: none; }
+}
+
+/* =============================================================
+   EXOD INTRO SPLASH + SMART HEADER
+   필요 없으면 이 블록 전체 삭제하면 됨
+============================================================= */
+
+/* ===== Intro splash ===== */
+.intro-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+
+.intro-splash.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.intro-splash__inner {
+  padding: 24px;
+  text-align: center;
+}
+
+.intro-splash__text {
+  display: inline-block;
+  font-size: clamp(1.4rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #111111;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: introTextIn 0.7s ease forwards;
+}
+
+@keyframes introTextIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Hero / header base ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--white);
+}
+
+/* 헤더를 항상 상단 고정으로 두되, 상태에 따라 투명도/배경만 바뀜 */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 500;
+  background: rgba(255, 255, 255, 0);
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  box-shadow: none;
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    backdrop-filter 0.35s ease,
+    -webkit-backdrop-filter 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+}
+
+/* 첫 화면에서는 글자만 보이는 상태 */
+body.header-hero .topbar {
+  background: rgba(255, 255, 255, 0);
+  border-bottom-color: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  box-shadow: none;
+}
+
+body.header-hero .brand,
+body.header-hero .nav a {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+body.header-hero .brand span {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+body.header-hero .nav a::after {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* 첫 화면에서 버튼도 배경 없이 가볍게 */
+body.header-hero .nav-cta .btn--dark {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: none;
+}
+
+/* hero 첫 화면에서 hover 하면 헤더가 잠깐 나타나는 느낌 */
+body.header-hero .topbar:hover,
+body.header-hero.header-hover .topbar {
+  background: rgba(255, 255, 255, 0.14);
+  border-bottom-color: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* 스크롤 중 점점 밝아지는 상태 */
+.topbar.is-scrolled {
+  background: rgba(255, 255, 255, var(--header-bg-alpha, 0.78));
+  border-bottom-color: rgba(17, 17, 17, calc(var(--header-line-alpha, 0.08)));
+  backdrop-filter: blur(calc(var(--header-blur, 14) * 1px));
+  -webkit-backdrop-filter: blur(calc(var(--header-blur, 14) * 1px));
+  box-shadow: 0 10px 30px rgba(0, 0, 0, calc(var(--header-shadow-alpha, 0.06)));
+}
+
+.topbar.is-scrolled .brand,
+.topbar.is-solid .brand,
+.topbar.is-scrolled .nav a,
+.topbar.is-solid .nav a {
+  color: #111111;
+}
+
+.topbar.is-scrolled .brand span,
+.topbar.is-solid .brand span {
+  color: #666666;
+}
+
+.topbar.is-scrolled .nav a::after,
+.topbar.is-solid .nav a::after {
+  background: #111111;
+}
+
+.topbar.is-scrolled .nav-cta .btn--dark,
+.topbar.is-solid .nav-cta .btn--dark {
+  background: linear-gradient(180deg, #191919 0%, #050505 100%);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
+}
+
+/* hero를 완전히 지나면 고정 헤더처럼 단단하게 */
+.topbar.is-solid {
+  background: rgba(245, 241, 235, 0.94);
+  border-bottom-color: rgba(17, 17, 17, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+}
+
+/* 모바일에서도 첫 화면 느낌 유지 */
+@media (max-width: 768px) {
+  body.header-hero .nav-hamburger {
+    border-color: rgba(255, 255, 255, 0.26);
+    background: transparent;
+  }
+
+  body.header-hero .nav-hamburger span {
+    background: #ffffff;
+  }
+
+  .topbar.is-scrolled .nav-hamburger,
+  .topbar.is-solid .nav-hamburger {
+    border-color: rgba(17, 17, 17, 0.12);
+    background: transparent;
+  }
+
+  .topbar.is-scrolled .nav-hamburger span,
+  .topbar.is-solid .nav-hamburger span {
+    background: #111111;
+  }
+}
+
+/* =============================================================
+   RETAIL PARTNERS SECTION — BEAUTY FOCUSED RESET
+   필요 없으면 이 블록 전체 삭제
+============================================================= */
+
+.partner-network-section {
+  padding: 52px 0 110px;
+  background: var(--bg);
+}
+
+.partner-network-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.partner-network-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.partner-network-kicker {
+  margin-bottom: 12px;
+  font-size: 0.78rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgba(32, 42, 58, 0.5);
+}
+
+.partner-network-title {
+  margin: 0;
+  line-height: 0.88;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+}
+
+.partner-network-title span {
+  display: block;
+  font-size: clamp(2.5rem, 4.3vw, 4.3rem);
+  font-weight: 800;
+  color: #101010;
+}
+
+.partner-network-title em {
+  display: block;
+  font-size: clamp(2.15rem, 3.7vw, 3.55rem);
+  font-style: italic;
+  font-weight: 300;
+  color: #0f0f10;
+}
+
+.partner-network-grid.partner-network-grid--eight {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.partner-network-card {
+  position: relative;
+  min-height: 304px;
+  border-radius: 28px;
+  overflow: hidden;
+  isolation: isolate;
+  text-decoration: none;
+  color: #ffffff;
+  background: #181818;
+  box-shadow: 0 18px 38px rgba(20, 16, 18, 0.1);
+  transition: transform 0.32s ease, box-shadow 0.32s ease;
+}
+
+.partner-network-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 46px rgba(20, 16, 18, 0.16);
+}
+
+.partner-network-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.partner-network-card__image,
+.partner-network-card__overlay,
+.partner-network-card__copy {
+  position: absolute;
+  inset: 0;
+}
+
+.partner-network-card__image {
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1);
+  transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1), filter 0.45s ease;
+}
+
+.partner-network-card:hover .partner-network-card__image {
+  transform: scale(1.04);
+  filter: saturate(1.03);
+}
+
+.partner-network-card__overlay {
+  z-index: 2;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 0.04) 0%,
+      rgba(10, 10, 10, 0.16) 38%,
+      rgba(10, 10, 10, 0.88) 100%
+    );
+}
+
+.partner-network-card__copy {
+  z-index: 4;
+  inset: auto 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 24px 24px 24px;
+}
+
+.partner-network-card__eyebrow {
+  display: inline-block;
+  font-size: 0.64rem;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.82);
+  text-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+}
+
+.partner-network-card__partners {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 92%;
+}
+
+.partner-network-card__partners span {
+  display: block;
+  font-size: clamp(1.55rem, 2vw, 2.15rem);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 14px 28px rgba(0, 0, 0, 0.3);
+}
+
+/* 줄 수가 긴 카드들은 약간만 줄이기 */
+.partner-network-card:nth-child(3) .partner-network-card__partners span,
+.partner-network-card:nth-child(4) .partner-network-card__partners span,
+.partner-network-card:nth-child(5) .partner-network-card__partners span,
+.partner-network-card:nth-child(6) .partner-network-card__partners span {
+  font-size: clamp(1.32rem, 1.7vw, 1.72rem);
+}
+
+/* =============================================================
+   IMAGE SET — 전부 beauty / shelf / product 중심으로 교체
+============================================================= */
+
+.partner-network-card__image--mass-retail {
+  background-image: url('https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=1600&q=80');
+  background-position: center;
+}
+
+.partner-network-card__image--warehouse {
+  background-image: url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1600&q=80');
+  background-position: center;
+}
+
+.partner-network-card__image--asian-market {
+  background-image: url('https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=1600&q=80');
+  background-position: center;
+}
+
+.partner-network-card__image--asian-culture {
+  background-image: url('https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1600&q=80');
+  background-position: center;
+}
+
+.partner-network-card__image--supermarket {
+  background-image: url('https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=1600&q=80');
+  background-position: center;
+}
+
+.partner-network-card__image--wellness {
+  background-image: url('https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1600&q=80');
+  background-position: center;
+}
+
+.partner-network-card__image--luxury {
+  background-image: url('https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=1600&q=80');
+  background-position: center;
+}
+
+.partner-network-card__image--marketplace {
+  background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80');
+  background-position: center;
+}
+
+/* =============================================================
+   RESPONSIVE
+============================================================= */
+
+@media (max-width: 1100px) {
+  .partner-network-grid.partner-network-grid--eight {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .partner-network-card {
+    min-height: 256px;
+  }
+
+  .partner-network-card__partners span,
+  .partner-network-card:nth-child(3) .partner-network-card__partners span,
+  .partner-network-card:nth-child(4) .partner-network-card__partners span,
+  .partner-network-card:nth-child(5) .partner-network-card__partners span,
+  .partner-network-card:nth-child(6) .partner-network-card__partners span {
+    font-size: clamp(1.2rem, 2.6vw, 1.7rem);
+  }
+}
+
+@media (max-width: 720px) {
+  .partner-network-section {
+    padding: 30px 0 80px;
+  }
+
+  .partner-network-shell {
+    gap: 24px;
+  }
+
+  .partner-network-title span {
+    font-size: 2.28rem;
+  }
+
+  .partner-network-title em {
+    font-size: 1.95rem;
+  }
+
+  .partner-network-grid.partner-network-grid--eight {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .partner-network-card {
+    min-height: 220px;
+    border-radius: 22px;
+  }
+
+  .partner-network-card__copy {
+    padding: 18px 18px 18px;
+    gap: 10px;
+  }
+
+  .partner-network-card__eyebrow {
+    font-size: 0.6rem;
+  }
+
+  .partner-network-card__partners {
+    max-width: 100%;
+  }
+
+  .partner-network-card__partners span,
+  .partner-network-card:nth-child(3) .partner-network-card__partners span,
+  .partner-network-card:nth-child(4) .partner-network-card__partners span,
+  .partner-network-card:nth-child(5) .partner-network-card__partners span,
+  .partner-network-card:nth-child(6) .partner-network-card__partners span {
+    font-size: 1.26rem;
+  }
 }
