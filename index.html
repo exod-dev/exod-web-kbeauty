@@ -19,7 +19,7 @@
     </div>
     <header class="topbar">
       <div class="topbar__inner">
-        <a href="#home" class="brand magnetic">EXOD<span>.</span></a>
+        <a href="#home" class="brand magnetic">EXOD INT<span>.</span></a>
 
         <nav class="nav">
           <a href="#home" class="magnetic">Home</a>
@@ -42,12 +42,12 @@
       <div class="mobile-nav__backdrop" id="mobileNavBackdrop"></div>
       <nav class="mobile-nav__drawer" role="navigation" aria-label="Mobile navigation">
         <div class="mobile-nav__header">
-          <span class="mobile-nav__brand">EXOD<span>.</span></span>
+          <span class="mobile-nav__brand">EXOD INT<span>.</span></span>
           <button class="mobile-nav__close" id="mobileNavClose" type="button" aria-label="Close menu">&times;</button>
         </div>
         <ul class="mobile-nav__links">
           <li><a href="#home"     class="mobile-nav__link">Home</a></li>
-          <li><a href="#about"    class="mobile-nav__link">About Us</a></li>
+          <li><a href="#about" class="mobile-nav__link">About Us</a></li>
           <li><a href="#brands"   class="mobile-nav__link">Brands</a></li>
           <li><a href="#partners" class="mobile-nav__link">Partners</a></li>
         </ul>
@@ -57,8 +57,8 @@
 
     <main>
       <section class="hero" id="home">
-        <video class="hero__video" autoplay muted loop playsinline preload="auto">
-          <source src="image/main/555.mp4" type="video/mp4">
+        <video class="hero__video" id="heroVideo" muted loop playsinline preload="auto">
+          <source src="image/main/banner.mp4" type="video/mp4">
         </video>
         <div class="hero__content">
           <div>
@@ -86,20 +86,20 @@
 
         <div class="hero__stats">
           <div class="stat">
-            <strong>20+</strong>
-            <span>Brand Partners</span>
+            <strong class="stat__number" data-count-to="40" data-count-prefix="$" data-count-suffix="M+">0</strong>
+            <span>Annual Revenue</span>
           </div>
           <div class="stat">
-            <strong>500+</strong>
-            <span>Retail Connections</span>
+            <strong class="stat__number" data-count-to="3000" data-count-suffix="+">0</strong>
+            <span>Products</span>
           </div>
           <div class="stat">
-            <strong>$40M+</strong>
-            <span>Annual Sales Potential</span>
+            <strong class="stat__number" data-count-to="50" data-count-suffix="+">0</strong>
+            <span>Brand Portfolio</span>
           </div>
           <div class="stat">
-            <strong>#1</strong>
-            <span>Launch-first Support</span>
+            <strong class="stat__number" data-count-to="21" data-count-suffix="+">0</strong>
+            <span>Years in Market</span>
           </div>
         </div>
       </section>
@@ -107,108 +107,132 @@
       <section class="ticker-wrap" aria-label="brand ticker">
         <div class="ticker">
           <div class="ticker__group">
-            <div class="ticker__item">40+ Brands</div>
-            <div class="ticker__dot"><span>+</span></div>
-            <div class="ticker__item">K-Beauty Taking Over</div>
-            <div class="ticker__dot"><span>+</span></div>
-            <div class="ticker__item">Wholesale</div>
-            <div class="ticker__dot"><span>+</span></div>
-            <div class="ticker__item">Trending on TikTok</div>
-            <div class="ticker__dot"><span>+</span></div>
-            <div class="ticker__item">Retail Ready</div>
-            <div class="ticker__dot"><span>+</span></div>
-            <div class="ticker__item">Seoul to North America</div>
-            <div class="ticker__dot"><span>+</span></div>
+            <img class="ticker__image ticker__image--wide" src="image/logo/Shoppers.png" alt="Shoppers Drug Mart">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image" src="image/logo/Walmart.png" alt="Walmart">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image" src="image/logo/Loblaws.png" alt="Loblaws">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image ticker__image--wide" src="image/logo/Costco.png" alt="Costco">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image" src="image/logo/Galleria.png" alt="Galleria">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image" src="image/logo/H mart.png" alt="H Mart">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image" src="image/logo/T&T.png" alt="T and T Supermarket">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image" src="image/logo/SUKOSHI.png" alt="Sukoshi">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image ticker__image--compact" src="image/logo/kiokii.png" alt="Kiokii">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image ticker__image--compact" src="image/logo/oomomo.png" alt="Oomomo">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image ticker__image--wide" src="image/logo/Real Canadian superstore.png" alt="Real Canadian Superstore">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image" src="image/logo/Well.ca.png" alt="Well.ca">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image ticker__image--wide" src="image/logo/Healthy Planet.png" alt="Healthy Planet">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image ticker__image--compact" src="image/logo/HR.png" alt="Holt Renfrew">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image ticker__image--compact" src="image/logo/rennai.png" alt="Rennai">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image ticker__image--wide" src="image/logo/AMAZON.png" alt="Amazon">
           </div>
           <div class="ticker__group" aria-hidden="true">
-            <div class="ticker__item">40+ Brands</div>
-            <div class="ticker__dot"><span>+</span></div>
-            <div class="ticker__item">K-Beauty Taking Over</div>
-            <div class="ticker__dot"><span>+</span></div>
-            <div class="ticker__item">Wholesale</div>
-            <div class="ticker__dot"><span>+</span></div>
-            <div class="ticker__item">Trending on TikTok</div>
-            <div class="ticker__dot"><span>+</span></div>
-            <div class="ticker__item">Retail Ready</div>
-            <div class="ticker__dot"><span>+</span></div>
-            <div class="ticker__item">Seoul to North America</div>
-            <div class="ticker__dot"><span>+</span></div>
+            <img class="ticker__image ticker__image--wide" src="image/logo/Shoppers.png" alt="">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image" src="image/logo/Walmart.png" alt="">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image" src="image/logo/Loblaws.png" alt="">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image ticker__image--wide" src="image/logo/Costco.png" alt="">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image" src="image/logo/Galleria.png" alt="">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image" src="image/logo/H mart.png" alt="">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image" src="image/logo/T&T.png" alt="">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image" src="image/logo/SUKOSHI.png" alt="">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image ticker__image--compact" src="image/logo/kiokii.png" alt="">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image ticker__image--compact" src="image/logo/oomomo.png" alt="">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image ticker__image--wide" src="image/logo/Real Canadian superstore.png" alt="">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image" src="image/logo/Well.ca.png" alt="">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image ticker__image--wide" src="image/logo/Healthy Planet.png" alt="">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image ticker__image--compact" src="image/logo/HR.png" alt="">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image ticker__image--compact" src="image/logo/rennai.png" alt="">
+            <span class="ticker__pipe" aria-hidden="true"></span>
+            <img class="ticker__image ticker__image--wide" src="image/logo/AMAZON.png" alt="">
           </div>
         </div>
       </section>
+<section class="opportunity-section opportunity-section--about" id="about">
+  <div class="container opportunity-shell">
+    <div class="opportunity-heading opportunity-heading--about">
+      <div class="opportunity-heading__copy">
+        <div class="opportunity-kicker">ABOUT US</div>
+        <h2 class="opportunity-title opportunity-title--about">
+          <span>WHY EXOD</span>
+          <em>INTERNATIONAL</em>
+        </h2>
+      </div>
 
+      <p class="opportunity-copy opportunity-copy--wide">
+        EXOD International helps Korean beauty brands build a stable, high-visibility presence across Canada through retail access, compliance support, performance execution, and a nationwide logistics backbone.
+      </p>
+    </div>
 
-      <section class="about-section" id="about">
-        <div class="container about-shell">
-          <div class="about-heading">
-            <div>
-              <div class="about-kicker">WHY EXOD</div>
-              <h2 class="about-title">
-                <span>K-Beauty That Feels</span>
-                <em>Like The Next Favorite</em>
-              </h2>
-            </div>
-          </div>
+    <div class="opportunity-body">
+      <div class="opportunity-metrics opportunity-metrics--about">
+        <article class="opportunity-card opportunity-card--about magnetic">
+          <span class="opportunity-card__eyebrow">MULTICHANNEL</span>
+          <h3>Online &amp; Offline Distribution Channels</h3>
+          <p>
+            We have secured powerful access to Canada's retail landscape across Mass and Premium channels, including Costco, Walmart, Shoppers Drug Mart, Loblaws, Holt Renfrew, Rennai, Well.ca, Kiokii, Sukoshi Mart, and more.
+          </p>
+        </article>
 
-          <div class="about-layout">
-            <div class="about-tabs" role="tablist" aria-label="Why EXOD highlights">
-              <button class="about-tab is-active" type="button" role="tab" aria-selected="true" data-about-key="culture">
-                <span class="about-tab__accent" aria-hidden="true"></span>
-                <span class="about-tab__body">
-                  <span class="about-tab__tag">Now</span>
-                  <strong>Feels Right on Social</strong>
-                  <small>We shape the brand so it feels save-worthy, current, and instantly desirable to younger beauty shoppers.</small>
-                </span>
-              </button>
+        <article class="opportunity-card opportunity-card--about magnetic">
+          <span class="opportunity-card__eyebrow">PERFORMANCE</span>
+          <h3>Performance-Driven Marketing Execution</h3>
+          <p>
+            Through strategic multi-channel marketing, pop-ups, influential collaborations, and magazine or broadcast exposure, we expand visibility, capture wider audiences, and turn that reach into measurable sales growth.
+          </p>
+        </article>
 
-              <button class="about-tab" type="button" role="tab" aria-selected="false" data-about-key="compliance">
-                <span class="about-tab__accent" aria-hidden="true"></span>
-                <span class="about-tab__body">
-                  <span class="about-tab__tag">Polish</span>
-                  <strong>Looks Premium on Shelf</strong>
-                  <small>Claims, packaging, and launch details stay clean so the brand feels elevated in-store, online, and in every first impression.</small>
-                </span>
-              </button>
+        <article class="opportunity-card opportunity-card--about magnetic">
+          <span class="opportunity-card__eyebrow">COMPLIANCE ASSURANCE</span>
+          <h3>Local Compliance &amp; Risk Management</h3>
+          <p>
+            Backed by deep Health Canada expertise, we ensure local compliance, proactively reduce risk, and support your brand with the structure needed for a stable long-term market presence.
+          </p>
+        </article>
 
-              <button class="about-tab" type="button" role="tab" aria-selected="false" data-about-key="support">
-                <span class="about-tab__accent" aria-hidden="true"></span>
-                <span class="about-tab__body">
-                  <span class="about-tab__tag">Growth</span>
-                  <strong>Built for Repeat Obsession</strong>
-                  <small>We stay close after launch so curiosity becomes re-buys, shelf presence, and long-term beauty loyalty.</small>
-                </span>
-              </button>
-            </div>
+        <article class="opportunity-card opportunity-card--about magnetic">
+          <span class="opportunity-card__eyebrow">LOGISTICS NETWORK</span>
+          <h3>Stable Logistics &amp; Nationwide Delivery</h3>
+          <p>
+            Our Toronto headquarters and Vancouver warehouse create a strong bicoastal supply chain, helping us manage inventory efficiently and deliver quickly across every region in Canada.
+          </p>
+        </article>
+      </div>
 
-            <div class="about-stage about-stage--culture" id="aboutStage">
-              <div class="about-stage__panel">
-                <div class="about-stage__eyebrow" id="aboutStageEyebrow">SAVE-WORTHY STORYTELLING</div>
-                <h3 class="about-stage__title" id="aboutStageTitle">
-                  We help Korean beauty land with the same energy people already love online: soft, elevated, and a little addictive.
-                </h3>
-                <p class="about-stage__copy" id="aboutStageCopy">
-                  That means better visual direction, sharper market fit, and launches that feel current to North American beauty shoppers instead of overly corporate.
-                </p>
-              </div>
-
-              <div class="about-metrics">
-                <div class="about-metric">
-                  <strong id="aboutMetricValue1">Saveable</strong>
-                  <span id="aboutMetricLabel1">visual mood</span>
-                </div>
-                <div class="about-metric">
-                  <strong id="aboutMetricValue2">Premium</strong>
-                  <span id="aboutMetricLabel2">shelf presence</span>
-                </div>
-                <div class="about-metric">
-                  <strong id="aboutMetricValue3">Repeat</strong>
-                  <span id="aboutMetricLabel3">purchase pull</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div class="opportunity-video-card magnetic">
+        <video class="opportunity-video" autoplay muted loop playsinline preload="auto">
+          <source src="image/phone/0415.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="brands-section" id="brands">
   <div class="container brands-shell">
@@ -222,48 +246,60 @@
       </div>
 
       <p class="brands-heading__copy">
-        We work with trusted, viral brands imported
-        directly from Korea through the exclusivity with
-        HQ or trusted vendors.
+        We work with trusted, viral brands
+        imported directly from Korea through exclusivity with
+        HQ teams or trusted vendors.
       </p>
     </div>
 
     <div class="brands-grid" aria-label="featured brand partners">
-      <a class="brand-tile brand-tile--candidate magnetic" href="#" data-brand="laneige">
-        <span class="brand-tile__name">LANEIGE</span>
+      <a class="brand-tile brand-tile--candidate brand-tile--imageonly magnetic" href="#" data-brand-image="image/brandImage/AMUSE SEOUL logo.png">
+        <span class="brand-tile__name">AMUSE SEOUL</span>
       </a>
 
-      <a class="brand-tile brand-tile--candidate magnetic" href="#" data-brand="sulwhasoo">
-        <span class="brand-tile__name">SULWHASOO</span>
-      </a>
-
-      <a class="brand-tile brand-tile--candidate magnetic" href="#" data-brand="cosrx">
-        <span class="brand-tile__name">COSRX</span>
-      </a>
-
-      <a class="brand-tile brand-tile--candidate magnetic" href="#" data-brand="etude-house">
-        <span class="brand-tile__name">ETUDE HOUSE</span>
-      </a>
-
-      <a class="brand-tile brand-tile--candidate magnetic" href="#" data-brand="innisfree">
-        <span class="brand-tile__name">INNISFREE</span>
-      </a>
-
-      <a class="brand-tile brand-tile--candidate magnetic" href="#" data-brand="missha">
+      <a class="brand-tile brand-tile--candidate brand-tile--imageonly magnetic" href="#" data-brand-image="image/brandImage/MISSHA logo.png">
         <span class="brand-tile__name">MISSHA</span>
       </a>
 
-      <a class="brand-tile brand-tile--candidate magnetic" href="#" data-brand="the-face-shop">
-        <span class="brand-tile__name">THE FACE SHOP</span>
+      <a class="brand-tile brand-tile--candidate magnetic" href="#" data-brand-image="image/brandImage/Dr.Melaxin.png">
+        <span class="brand-tile__name">DR. MELAXIN</span>
       </a>
 
-      <a class="brand-tile brand-tile--candidate magnetic" href="#" data-brand="round-lab">
+      <a class="brand-tile brand-tile--candidate magnetic" href="#" data-brand-image="image/brandImage/Dr.Rejuall.png">
+        <span class="brand-tile__name">DR. REJUALL</span>
+      </a>
+
+      <a class="brand-tile brand-tile--candidate brand-tile--imageonly magnetic" href="#" data-brand-image="image/brandImage/Purito+LOGO.png">
+        <span class="brand-tile__name">PURITO</span>
+      </a>
+
+      <a class="brand-tile brand-tile--candidate brand-tile--imageonly magnetic" href="#" data-brand-image="image/brandImage/TIRTIR+LOGO.png">
+        <span class="brand-tile__name">TIRTIR</span>
+      </a>
+
+      <a class="brand-tile brand-tile--candidate brand-tile--imageonly magnetic" href="#" data-brand-image="image/brandImage/Skin1004 logo.png">
+        <span class="brand-tile__name">SKIN1004</span>
+      </a>
+
+      <a class="brand-tile brand-tile--candidate brand-tile--imageonly magnetic" href="#" data-brand-image="image/brandImage/Biodance logo.png">
+        <span class="brand-tile__name">BIODANCE</span>
+      </a>
+
+      <a class="brand-tile brand-tile--candidate magnetic" href="#" data-brand-image="image/brandImage/Numbuzin.png">
+        <span class="brand-tile__name">NUMBUZIN</span>
+      </a>
+
+      <a class="brand-tile brand-tile--candidate magnetic" href="#" data-brand-image="image/brandImage/VT Cosmetics.png">
+        <span class="brand-tile__name">VT COSMETICS</span>
+      </a>
+
+      <a class="brand-tile brand-tile--candidate brand-tile--imageonly magnetic" href="#" data-brand-image="image/brandImage/Round Lab+LOGO.png">
         <span class="brand-tile__name">ROUND LAB</span>
       </a>
-      <a class="brand-tile"><span>HERA</span></a>
-      <a class="brand-tile"><span>DR. JART+</span></a>
-      <a class="brand-tile"><span>IOPE</span></a>
-      <a class="brand-tile"><span>SKINFOOD</span></a>
+
+      <a class="brand-tile brand-tile--candidate brand-tile--imageonly magnetic" href="#" data-brand-image="image/brandImage/Torriden+LOGO.png">
+        <span class="brand-tile__name">TORRIDEN</span>
+      </a>
     </div>
 
     <div class="brands-actions">
@@ -271,222 +307,7 @@
     </div>
   </div>
 </section>
-    
-<section class="opportunity-section" id="opportunity">
-  <div class="container opportunity-shell">
-    <div class="opportunity-heading">
-      <div>
-        <div class="opportunity-kicker">WHY K-BEAUTY</div>
-        <h2 class="opportunity-title">
-          <span>THE BIGGEST</span>
-          <em>OPPORTUNITY</em>
-          <span>IN BEAUTY.</span>
-        </h2>
-      </div>
-
-      <div class="opportunity-copy">
-        <p>
-          K-beauty is not a trend. It is a category shift in how younger shoppers
-          think about skin, self-care, and what they actually want to buy again.
-        </p>
-        <p>
-          Retailers who moved early are seeing stronger engagement, faster sell-through,
-          and a customer base that is already fluent in the language of glow, barrier repair,
-          and ingredient-led skincare.
-        </p>
-      </div>
-    </div>
-
-    <div class="opportunity-metrics">
-      <article class="opportunity-card magnetic">
-        <strong>$21B</strong>
-        <h3>Global K-Beauty Market Size</h3>
-        <p>Projected category size as demand keeps accelerating worldwide.</p>
-      </article>
-
-      <article class="opportunity-card magnetic">
-        <strong>65%</strong>
-        <h3>of US Gen Z</h3>
-        <p>Beauty shoppers actively following skincare-first product trends.</p>
-      </article>
-
-      <article class="opportunity-card magnetic">
-        <strong>3.2x</strong>
-        <h3>Faster Growth</h3>
-        <p>Compared with slower legacy beauty categories in the same retail space.</p>
-      </article>
-
-      <article class="opportunity-card magnetic">
-        <strong>40M+</strong>
-        <h3>Monthly TikTok Views</h3>
-        <p>K-beauty content demand across social, creator, and review-led platforms.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="signals-section" aria-label="K-beauty market signals">
-  <div class="container signals-grid">
-    <article class="signal-card magnetic">
-      <div class="signal-card__media signal-card__media--formula">
-        <span class="signal-card__tag">Innovation</span>
-        <span class="signal-card__index">01</span>
-      </div>
-      <div class="signal-card__body">
-        <h3>SCIENCE-FIRST FORMULAS</h3>
-        <p>Glass skin, barrier repair, and ingredient storytelling are no longer niche. They are now baseline expectations.</p>
-      </div>
-    </article>
-
-    <article class="signal-card magnetic">
-      <div class="signal-card__media signal-card__media--culture">
-        <span class="signal-card__tag">Influence</span>
-        <span class="signal-card__index">02</span>
-      </div>
-      <div class="signal-card__body">
-        <h3>CULTURE IS CURRENCY</h3>
-        <p>K-pop, K-drama, and Korean lifestyle aesthetics keep making beauty feel more relevant, more aspirational, and more wanted.</p>
-      </div>
-    </article>
-
-    <article class="signal-card magnetic">
-      <div class="signal-card__media signal-card__media--audience">
-        <span class="signal-card__tag">Audience</span>
-        <span class="signal-card__index">03</span>
-      </div>
-      <div class="signal-card__body">
-        <h3>GEN Z APPROVED</h3>
-        <p>The most influential beauty customer is loyal to brands that feel effective, aesthetic, and authentic. K-beauty checks all three.</p>
-      </div>
-    </article>
-  </div>
-</section>
-
-<section class="manifesto-section">
-  <div class="container">
-    <div class="manifesto-card">
-      <p class="manifesto-quote">K-beauty is not coming to America. <em>It is already here.</em> We just make it official.</p>
-      <span class="manifesto-credit">EXOD SUPPLY, 2026</span>
-    </div>
-  </div>
-</section>
-
-
-    
-<section class="partner-network-section" id="partners">
-  <div class="container partner-network-shell">
-    <div class="partner-network-heading">
-      <div>
-        <div class="partner-network-kicker">DISTRIBUTION</div>
-        <h2 class="partner-network-title">
-          <span>RETAIL</span>
-          <em>PARTNERS</em>
-        </h2>
-      </div>
-    </div>
-
-    <div class="partner-network-grid partner-network-grid--eight">
-      <a class="partner-network-card magnetic" href="#" aria-label="Mass retail partners">
-        <div class="partner-network-card__image partner-network-card__image--mass-retail"></div>
-        <div class="partner-network-card__overlay"></div>
-        <div class="partner-network-card__copy">
-          <span class="partner-network-card__eyebrow">Mass Retail</span>
-          <div class="partner-network-card__partners">
-            <span>SHOPPERS</span>
-            <span>WALMART</span>
-            <span>LOBLAW</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="partner-network-card magnetic" href="#" aria-label="Warehouse value partners">
-        <div class="partner-network-card__image partner-network-card__image--warehouse"></div>
-        <div class="partner-network-card__overlay"></div>
-        <div class="partner-network-card__copy">
-          <span class="partner-network-card__eyebrow">Warehouse Value</span>
-          <div class="partner-network-card__partners">
-            <span>COSTCO</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="partner-network-card magnetic" href="#" aria-label="Asian supermarket partners">
-        <div class="partner-network-card__image partner-network-card__image--asian-market"></div>
-        <div class="partner-network-card__overlay"></div>
-        <div class="partner-network-card__copy">
-          <span class="partner-network-card__eyebrow">Asian Supermarkets</span>
-          <div class="partner-network-card__partners">
-            <span>GALLERIA</span>
-            <span>H MART</span>
-            <span>T&amp;T</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="partner-network-card magnetic" href="#" aria-label="Asian beauty and culture partners">
-        <div class="partner-network-card__image partner-network-card__image--asian-culture"></div>
-        <div class="partner-network-card__overlay"></div>
-        <div class="partner-network-card__copy">
-          <span class="partner-network-card__eyebrow">Asian Beauty &amp; Culture</span>
-          <div class="partner-network-card__partners">
-            <span>SUKOSHI</span>
-            <span>KIOKII</span>
-            <span>OOMOMO</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="partner-network-card magnetic" href="#" aria-label="Mainstream supermarket partners">
-        <div class="partner-network-card__image partner-network-card__image--supermarket"></div>
-        <div class="partner-network-card__overlay"></div>
-        <div class="partner-network-card__copy">
-          <span class="partner-network-card__eyebrow">Mainstream Supermarkets</span>
-          <div class="partner-network-card__partners">
-            <span>REAL CANADIAN</span>
-            <span>SUPERSTORE</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="partner-network-card magnetic" href="#" aria-label="Health and wellness partners">
-        <div class="partner-network-card__image partner-network-card__image--wellness"></div>
-        <div class="partner-network-card__overlay"></div>
-        <div class="partner-network-card__copy">
-          <span class="partner-network-card__eyebrow">Health &amp; Wellness</span>
-          <div class="partner-network-card__partners">
-            <span>WELL.CA</span>
-            <span>HEALTHY PLANET</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="partner-network-card magnetic" href="#" aria-label="Luxury department partners">
-        <div class="partner-network-card__image partner-network-card__image--luxury"></div>
-        <div class="partner-network-card__overlay"></div>
-        <div class="partner-network-card__copy">
-          <span class="partner-network-card__eyebrow">Luxury Department</span>
-          <div class="partner-network-card__partners">
-            <span>HOLT RENFREW</span>
-            <span>RENNAÏ</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="partner-network-card magnetic" href="#" aria-label="Digital marketplace partners">
-        <div class="partner-network-card__image partner-network-card__image--marketplace"></div>
-        <div class="partner-network-card__overlay"></div>
-        <div class="partner-network-card__copy">
-          <span class="partner-network-card__eyebrow">Digital Marketplace</span>
-          <div class="partner-network-card__partners">
-            <span>AMAZON</span>
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="process-section" id="process">
+<!-- <section class="process-section" id="process">
   <div class="container process-shell">
     <div class="process-heading">
       <div class="process-kicker">PROCESS</div>
@@ -540,6 +361,336 @@
           <p>After launch, we support wider placement, account growth, and the next phase of distribution momentum.</p>
         </div>
       </article>
+    </div>
+  </div>
+</section> -->
+<section class="partner-network-section" id="partners">
+  <div class="container partner-network-shell">
+    <div class="partner-network-heading">
+      <div>
+        <div class="partner-network-kicker">DISTRIBUTION</div>
+        <h2 class="partner-network-title">
+          <span>RETAIL</span>
+          <em>PARTNERS</em>
+        </h2>
+      </div>
+    </div>
+
+    <div class="partner-network-grid partner-network-grid--eight">
+      <a class="partner-network-card magnetic" href="#" data-partner="mass-retail" aria-label="Mass retail partners">
+        <div class="partner-network-card__image partner-network-card__image--mass-retail"></div>
+        <div class="partner-network-card__overlay"></div>
+        <div class="partner-network-card__copy">
+          <span class="partner-network-card__eyebrow">Mass Retail</span>
+          <div class="partner-network-card__partners">
+            <span>SHOPPERS</span>
+            <span>WALMART</span>
+            <span>LOBLAW</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="partner-network-card magnetic" href="#" data-partner="warehouse" aria-label="Warehouse value partners">
+        <div class="partner-network-card__image partner-network-card__image--warehouse"></div>
+        <div class="partner-network-card__overlay"></div>
+        <div class="partner-network-card__copy">
+          <span class="partner-network-card__eyebrow">Warehouse Value</span>
+          <div class="partner-network-card__partners">
+            <span>COSTCO</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="partner-network-card magnetic" href="#" data-partner="asiansu" aria-label="Asian supermarket partners">
+        <div class="partner-network-card__image partner-network-card__image--asian-market"></div>
+        <div class="partner-network-card__overlay"></div>
+        <div class="partner-network-card__copy">
+          <span class="partner-network-card__eyebrow">Asian Supermarkets</span>
+          <div class="partner-network-card__partners">
+            <span>GALLERIA</span>
+            <span>H MART</span>
+            <span>T&amp;T</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="partner-network-card magnetic" href="#" data-partner="asianbeauty" aria-label="Asian beauty and culture partners">
+        <div class="partner-network-card__image partner-network-card__image--asian-culture"></div>
+        <div class="partner-network-card__overlay"></div>
+        <div class="partner-network-card__copy">
+          <span class="partner-network-card__eyebrow">Asian Beauty &amp; Culture</span>
+          <div class="partner-network-card__partners">
+            <span>SUKOSHI</span>
+            <span>KIOKII</span>
+            <span>OOMOMO</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="partner-network-card magnetic" href="#" data-partner="mainstream" aria-label="Mainstream supermarket partners">
+        <div class="partner-network-card__image partner-network-card__image--supermarket"></div>
+        <div class="partner-network-card__overlay"></div>
+        <div class="partner-network-card__copy">
+          <span class="partner-network-card__eyebrow">Mainstream Supermarkets</span>
+          <div class="partner-network-card__partners">
+            <span>REAL CANADIAN</span>
+            <span>SUPERSTORE</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="partner-network-card magnetic" href="#" data-partner="health" aria-label="Health and wellness partners">
+        <div class="partner-network-card__image partner-network-card__image--wellness"></div>
+        <div class="partner-network-card__overlay"></div>
+        <div class="partner-network-card__copy">
+          <span class="partner-network-card__eyebrow">Health &amp; Wellness</span>
+          <div class="partner-network-card__partners">
+            <span>WELL.CA</span>
+            <span>HEALTHY PLANET</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="partner-network-card magnetic" href="#" data-partner="luxury" aria-label="Luxury department partners">
+        <div class="partner-network-card__image partner-network-card__image--luxury"></div>
+        <div class="partner-network-card__overlay"></div>
+        <div class="partner-network-card__copy">
+          <span class="partner-network-card__eyebrow">Luxury Department</span>
+          <div class="partner-network-card__partners">
+            <span>HOLT RENFREW</span>
+            <span>RENNAÏ</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="partner-network-card magnetic" href="#" data-partner="digital" aria-label="Digital marketplace partners">
+        <div class="partner-network-card__image partner-network-card__image--marketplace"></div>
+        <div class="partner-network-card__overlay"></div>
+        <div class="partner-network-card__copy">
+          <span class="partner-network-card__eyebrow">Digital Marketplace</span>
+          <div class="partner-network-card__partners">
+            <span>AMAZON</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<section class="process-section process-section--brands" id="process">
+  <div class="container process-shell process-shell--editorial">
+    <div class="process-heading process-heading--editorial">
+      <div>
+        <div class="process-kicker">RECENT WORK</div>
+        <h2 class="process-title">
+          <span>WHAT WE</span>
+          <em>MADE POP</em>
+        </h2>
+      </div>
+      <div class="process-heading__side">
+        <p class="process-intro">
+          Real launches, real retail, and the kind of moments people actually post. This is how EXOD turns distribution into something visible, current, and culturally alive.
+        </p>
+      </div>
+    </div>
+
+    <div class="case-carousel">
+      <button class="process-controls__btn process-controls__btn--prev magnetic" id="processPrev" type="button" aria-label="Previous case study">&lt;</button>
+      <div class="case-carousel__viewport">
+        <div class="case-carousel__track" id="caseStudyTrack">
+          <article class="event-card magnetic">
+            <img class="event-card__image" src="image/event/화면 캡처 2026-04-16 164853.png" alt="Premium seeding packaging and gifting">
+            <div class="event-card__overlay"></div>
+            <div class="event-card__copy">
+              <span class="event-card__eyebrow">Creator Seeding</span>
+              <h3>Premium Kits</h3>
+              <div class="event-card__details">
+                <p>Creator gifting built to photograph beautifully on arrival.</p>
+                <div class="event-card__metrics">
+                  <span>50 Creators</span>
+                  <span>Premium Packaging</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="event-card magnetic">
+            <img class="event-card__image" src="image/event/화면 캡처 2026-04-16 164913.png" alt="Creator story coverage from seeding campaign">
+            <div class="event-card__overlay"></div>
+            <div class="event-card__copy">
+              <span class="event-card__eyebrow">Story Reach</span>
+              <h3>Social Echo</h3>
+              <div class="event-card__details">
+                <p>Unboxings and repostable story frames that extended the launch.</p>
+                <div class="event-card__metrics">
+                  <span>30M+ Reach</span>
+                  <span>UGC Forward</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="event-card magnetic">
+            <img class="event-card__image" src="image/event/화면 캡처 2026-04-16 164922.png" alt="Rennai K-Beauty pop-up activation">
+            <div class="event-card__overlay"></div>
+            <div class="event-card__copy">
+              <span class="event-card__eyebrow">Retail Activation</span>
+              <h3>Pop-Up</h3>
+              <div class="event-card__details">
+                <p>Open-to-public retail moments designed for foot traffic and visibility.</p>
+                <div class="event-card__metrics">
+                  <span>Open to Public</span>
+                  <span>20 Influencers</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="event-card magnetic">
+            <img class="event-card__image" src="image/event/화면 캡처 2026-04-16 165029.png" alt="Pop-up recap and story grid">
+            <div class="event-card__overlay"></div>
+            <div class="event-card__copy">
+              <span class="event-card__eyebrow">Post Event</span>
+              <h3>Recap Content</h3>
+              <div class="event-card__details">
+                <p>Story grids and recap clips that kept the activation circulating.</p>
+                <div class="event-card__metrics">
+                  <span>10M+ Impressions</span>
+                  <span>Story Grid</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="event-card magnetic">
+            <img class="event-card__image" src="image/event/화면 캡처 2026-04-16 165041.png" alt="PR event influencer coverage">
+            <div class="event-card__overlay"></div>
+            <div class="event-card__copy">
+              <span class="event-card__eyebrow">Press Night</span>
+              <h3>PR Event</h3>
+              <div class="event-card__details">
+                <p>Premium event coverage that made the launch feel editorially placed.</p>
+                <div class="event-card__metrics">
+                  <span>900K+ Reach</span>
+                  <span>Press Night</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="event-card magnetic">
+            <img class="event-card__image" src="image/event/화면 캡처 2026-04-16 165052.png" alt="Influencer and post-event story coverage">
+            <div class="event-card__overlay"></div>
+            <div class="event-card__copy">
+              <span class="event-card__eyebrow">Creator Coverage</span>
+              <h3>Afterglow</h3>
+              <div class="event-card__details">
+                <p>Influencer posts and in-store clips that carried the moment forward.</p>
+                <div class="event-card__metrics">
+                  <span>Post Event Buzz</span>
+                  <span>In-Store Clips</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="event-card magnetic">
+            <img class="event-card__image" src="image/event/image (6).png" alt="Beauty magazine editorial cover">
+            <div class="event-card__overlay"></div>
+            <div class="event-card__copy">
+              <span class="event-card__eyebrow">Editorial</span>
+              <h3>Magazine</h3>
+              <div class="event-card__details">
+                <p>Beauty media placement that added an extra layer of credibility.</p>
+                <div class="event-card__metrics">
+                  <span>Editorial Placement</span>
+                  <span>Beauty Media</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="event-card magnetic">
+            <img class="event-card__image" src="image/event/image (5).png" alt="Formal beauty industry awards event">
+            <div class="event-card__overlay"></div>
+            <div class="event-card__copy">
+              <span class="event-card__eyebrow">Industry Event</span>
+              <h3>Awards</h3>
+              <div class="event-card__details">
+                <p>Industry-facing presence that supported a more premium brand read.</p>
+                <div class="event-card__metrics">
+                  <span>Industry Proof</span>
+                  <span>Premium Audience</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="event-card magnetic">
+            <img class="event-card__image" src="image/event/image (7).png" alt="Holt Renfrew holiday beauty calendar">
+            <div class="event-card__overlay"></div>
+            <div class="event-card__copy">
+              <span class="event-card__eyebrow">Holiday Retail</span>
+              <h3>Seasonal Edit</h3>
+              <div class="event-card__details">
+                <p>Giftable merchandising moments tailored to department-store retail.</p>
+                <div class="event-card__metrics">
+                  <span>Holiday Retail</span>
+                  <span>Department Store</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="event-card magnetic">
+            <img class="event-card__image" src="image/event/image (8).png" alt="Rennai holiday beauty calendar">
+            <div class="event-card__overlay"></div>
+            <div class="event-card__copy">
+              <span class="event-card__eyebrow">Holiday Retail</span>
+              <h3>Calendar Drop</h3>
+              <div class="event-card__details">
+                <p>Collectible holiday presentation with strong shelf and gifting appeal.</p>
+                <div class="event-card__metrics">
+                  <span>Giftable Format</span>
+                  <span>Seasonal Drop</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="event-card magnetic">
+            <img class="event-card__image" src="image/event/image (4).png" alt="d'Alba retail booth in Holt Renfrew">
+            <div class="event-card__overlay"></div>
+            <div class="event-card__copy">
+              <span class="event-card__eyebrow">Luxury Retail</span>
+              <h3>d'Alba Install</h3>
+              <div class="event-card__details">
+                <p>Counter presence designed for luxury retail visibility rather than pop-up traffic.</p>
+                <div class="event-card__metrics">
+                  <span>Holt Renfrew</span>
+                  <span>Luxury Counter</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="event-card magnetic">
+            <img class="event-card__image" src="image/event/image (3).png" alt="d'Alba branded retail installation">
+            <div class="event-card__overlay"></div>
+            <div class="event-card__copy">
+              <span class="event-card__eyebrow">Retail Styling</span>
+              <h3>Visual Merch</h3>
+              <div class="event-card__details">
+                <p>Branded retail styling that made the installation feel premium and current.</p>
+                <div class="event-card__metrics">
+                  <span>Visual Merch</span>
+                  <span>Retail Styling</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <button class="process-controls__btn process-controls__btn--next magnetic" id="processNext" type="button" aria-label="Next case study">&gt;</button>
     </div>
   </div>
 </section>
@@ -611,7 +762,7 @@
     <footer class="site-footer" id="contact">
       <div class="container footer-shell">
         <div class="footer-brandblock">
-          <a href="#home" class="footer-brand">EXOD<span>.</span></a>
+          <a href="#home" class="footer-brand">EXOD INT<span>.</span></a>
           <p class="footer-copy">
             North America-focused partner for Korean beauty launches, retail entry,
             and steady channel expansion.
@@ -626,15 +777,15 @@
         <div class="footer-column">
           <h3>Office</h3>
           <p>Toronto HQ</p>
-          <span>Newmarket, Ontario</span>
+          <span>108 Doncaster Ave Thornhill, ON L4T 1L3</span>
           <p>Vancouver Ops</p>
-          <span>Delta, British Columbia</span>
+          <span>7060 Waltham Ave Burnaby, BC V5J 4V5</span>
         </div>
 
         <div class="footer-column">
           <h3>Contact</h3>
           <a href="mailto:service@exodint.com">service@exodint.com</a>
-          <a href="tel:+16474996998">+1 (647) 499-6998</a>
+          <a href="tel:+19058813111">+1 905 881 3111</a>
           <span>Mon-Fri / 9AM-6PM EST</span>
           <a href="https://partners.exodint.com/" target="_blank" rel="noopener noreferrer" class="footer-partner-cta">Become a Partner &rarr;</a>
         </div>
@@ -643,7 +794,7 @@
       <div class="container footer-bottom">
         <span>© 2026 EXOD INT. All rights reserved.</span>
         <div class="footer-links">
-          <a href="#about">About</a>
+          <a href="#about">About Us</a>
           <a href="#brands">Brands</a>
           <a href="#partners">Partners</a>
         </div>
@@ -655,9 +806,10 @@
       <div class="brands-modal__backdrop" id="closeBrandsModalBackdrop"></div>
 
       <div class="brands-modal__panel" role="dialog" aria-modal="true" aria-labelledby="brandsModalTitle">
-        <button class="brands-modal__close magnetic" id="closeBrandsModal" type="button" aria-label="Close">&times;</button>
-
-        <h3 class="brands-modal__title" id="brandsModalTitle">All Our Brands</h3>
+        <div class="brands-modal__header">
+          <h3 class="brands-modal__title" id="brandsModalTitle">All Our Brands</h3>
+          <button class="brands-modal__close magnetic" id="closeBrandsModal" type="button" aria-label="Close">&times;</button>
+        </div>
 
         <div class="brands-modal__grid">
           <a class="brand-tile brand-tile--modal magnetic" href="#"><span class="brand-tile__name">LANEIGE</span></a>
@@ -727,93 +879,71 @@
   closeBrandsModalBdrop?.addEventListener('click', closeModal);
 
   /* =========================================================
-     ABOUT TABS
+     HERO COUNTERS
   ========================================================= */
-  const ABOUT_CONTENT = {
-    culture: {
-      eyebrow: 'SAVE-WORTHY STORYTELLING',
-      title:   'We help Korean beauty land with the same energy people already love online: soft, elevated, and a little addictive.',
-      copy:    'That means better visual direction, sharper market fit, and launches that feel current to North American beauty shoppers instead of overly corporate.',
-      highlight: 'The sweet spot is simple: aspirational enough to save, polished enough to trust, and good enough to keep reaching for.',
-      metrics:   [['Saveable','visual mood'],['Premium','shelf presence'],['Repeat','purchase pull']],
-      stageClass: 'about-stage--culture'
-    },
-    compliance: {
-      eyebrow: 'SHELF + SOCIAL POLISH',
-      title:   'The premium feeling stays intact because every launch detail looks clean, considered, and ready to be seen.',
-      copy:    'We handle market-entry details in a way that keeps the brand polished, modern, and visually elevated instead of weighed down by corporate friction.',
-      highlight: 'Good compliance should never make a beauty brand feel dull. It should make the brand feel ready, confident, and premium in the best way.',
-      metrics:   [['Clean','claims support'],['Elevated','launch finish'],['Retail','ready flow']],
-      stageClass: 'about-stage--compliance'
-    },
-    support: {
-      eyebrow: 'STAY-WORTHY GROWTH',
-      title:   'We help the brand keep its cool factor after launch so first interest turns into repeat obsession.',
-      copy:    'From assortment rhythm to sell-through feedback, we stay close enough to keep the brand feeling fresh, wanted, and worth coming back to.',
-      highlight: 'The goal is not just distribution. It is creating the kind of beauty presence people repurchase, recommend, and keep noticing.',
-      metrics:   [['Fresh','brand momentum'],['Loyal','repeat demand'],['Lasting','beauty relevance']],
-      stageClass: 'about-stage--support'
-    }
+  const formatCounterValue = (value) => {
+    if (value >= 1000) return Math.round(value).toLocaleString('en-US');
+    return String(Math.round(value));
   };
 
-  const initAboutTabs = () => {
-    const tabs         = document.querySelectorAll('.about-tab[data-about-key]');
-    const stage        = document.getElementById('aboutStage');
-    const highlight    = document.querySelector('.about-highlight__text');
-    const eyebrow      = document.getElementById('aboutStageEyebrow');
-    const titleEl      = document.getElementById('aboutStageTitle');
-    const copyEl       = document.getElementById('aboutStageCopy');
-    const mv1 = document.getElementById('aboutMetricValue1');
-    const mv2 = document.getElementById('aboutMetricValue2');
-    const mv3 = document.getElementById('aboutMetricValue3');
-    const ml1 = document.getElementById('aboutMetricLabel1');
-    const ml2 = document.getElementById('aboutMetricLabel2');
-    const ml3 = document.getElementById('aboutMetricLabel3');
+  const initHeroCounters = () => {
+    const numbers = document.querySelectorAll('.stat__number[data-count-to]');
+    const heroStats = document.querySelector('.hero__stats');
+    const HERO_COUNTER_DELAY = 3000;
 
-    if (!tabs.length || !stage) return;
+    if (!numbers.length || !heroStats) return;
 
-    const applyState = (key) => {
-      const c = ABOUT_CONTENT[key];
-      if (!c) return;
+    const animateNumber = (el, index) => {
+      const target = Number(el.dataset.countTo || 0);
+      const prefix = el.dataset.countPrefix || '';
+      const suffix = el.dataset.countSuffix || '';
+      const duration = 1500 + index * 180;
+      const startValue = target >= 1000 ? target * 0.18 : 0;
+      const start = performance.now();
 
-      tabs.forEach((t) => {
-        const active = t.dataset.aboutKey === key;
-        t.classList.toggle('is-active', active);
-        t.setAttribute('aria-selected', String(active));
-      });
+      const tick = (now) => {
+        const rawProgress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - rawProgress, 4);
+        const overshoot = rawProgress < 0.82 ? 1 : 1 + (0.06 * Math.sin((rawProgress - 0.82) * Math.PI / 0.18));
+        const current = Math.min(target, startValue + ((target - startValue) * eased * overshoot));
 
-      stage.classList.add('is-transitioning');
-      stage.classList.remove('about-stage--culture','about-stage--compliance','about-stage--support');
-      stage.classList.add(c.stageClass);
+        el.textContent = `${prefix}${formatCounterValue(current)}${suffix}`;
+        el.parentElement?.classList.toggle('is-live', rawProgress < 1);
 
-      if (eyebrow)   eyebrow.textContent   = c.eyebrow;
-      if (titleEl)   titleEl.textContent   = c.title;
-      if (copyEl)    copyEl.textContent    = c.copy;
-      if (highlight) highlight.textContent = c.highlight;
-      if (mv1) mv1.textContent = c.metrics[0][0];
-      if (ml1) ml1.textContent = c.metrics[0][1];
-      if (mv2) mv2.textContent = c.metrics[1][0];
-      if (ml2) ml2.textContent = c.metrics[1][1];
-      if (mv3) mv3.textContent = c.metrics[2][0];
-      if (ml3) ml3.textContent = c.metrics[2][1];
+        if (rawProgress < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          el.textContent = `${prefix}${formatCounterValue(target)}${suffix}`;
+          el.parentElement?.classList.remove('is-live');
+          el.parentElement?.classList.add('is-ready');
+        }
+      };
 
-      setTimeout(() => stage.classList.remove('is-transitioning'), 220);
+      requestAnimationFrame(tick);
     };
 
-    tabs.forEach((tab) => {
-      tab.addEventListener('click', () => applyState(tab.dataset.aboutKey || 'culture'));
-    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        window.setTimeout(() => {
+          numbers.forEach((el, index) => {
+            window.setTimeout(() => animateNumber(el, index), index * 120);
+          });
+        }, HERO_COUNTER_DELAY);
+
+        observer.disconnect();
+      });
+    }, { threshold: 0.45 });
+
+    observer.observe(heroStats);
   };
 
   /* =========================================================
-     BRAND IMAGES — sequential file discovery
-     Place images as:  image/brands/{slug}-1.jpg  (or .png / .webp)
-                       image/brands/{slug}-2.jpg  etc.
-     The showcase main image must be named:
-                       image/brands/{slug}-main.png  (already in HTML)
+     BRAND IMAGES
   ========================================================= */
   const IMG_EXTS      = ['webp','jpg','png','jpeg'];
-  const IMG_BASE      = 'image/brands';
+  const IMG_BASE      = 'image/brandImage';
   const GRID_MAX      = 6;
   const SHOWCASE_IDXS = [1, 2];
 
@@ -862,6 +992,12 @@
     tile.appendChild(wrap);
 
     const imgs = Array.from(wrap.querySelectorAll('.brand-preview__img'));
+    if (imgs.length === 1) {
+      imgs[0].classList.add('is-visible');
+      tile.classList.add('brand-tile--static');
+      return;
+    }
+
     let tids   = [];
 
     const clear = () => { tids.forEach(clearTimeout); tids = []; imgs.forEach(i => i.classList.remove('animate')); };
@@ -875,8 +1011,16 @@
   };
 
   const initBrandPreviews = async () => {
-    for (const tile of document.querySelectorAll('.brand-tile--candidate[data-brand]')) {
-      setupPreviewTile(tile, await loadSequence(tile.dataset.brand, GRID_MAX));
+    for (const tile of document.querySelectorAll('.brand-tile--candidate')) {
+      const directImage = tile.dataset.brandImage;
+      if (directImage) {
+        setupPreviewTile(tile, [directImage]);
+        continue;
+      }
+
+      if (tile.dataset.brand) {
+        setupPreviewTile(tile, await loadSequence(tile.dataset.brand, GRID_MAX));
+      }
     }
   };
 
@@ -988,15 +1132,23 @@
   ========================================================= */
   const initIntroSplash = () => {
     const intro = document.getElementById('introSplash');
+    const heroVideo = document.getElementById('heroVideo');
     if (!intro) return;
 
     // 필요하면 시간 조절:
     // 1600 = 1.6초
-    const INTRO_DURATION = 1600;
+    const INTRO_DURATION = 2000;
 
     window.setTimeout(() => {
       intro.classList.add('is-hidden');
     }, INTRO_DURATION);
+
+    if (heroVideo) {
+      heroVideo.pause();
+      window.setTimeout(() => {
+        heroVideo.play().catch(() => {});
+      }, INTRO_DURATION + 900);
+    }
   };
 
   /* =========================================================
@@ -1022,8 +1174,8 @@
       const inHeroZone = y < heroHeight - 120;
       document.body.classList.toggle('header-hero', inHeroZone);
 
-      // 스크롤 조금만 되어도 active
-      topbar.classList.toggle('is-scrolled', y > 10);
+      // hero를 벗어난 뒤부터만 고정 헤더처럼 활성화
+      topbar.classList.toggle('is-scrolled', !inHeroZone && y > 10);
 
       // hero 거의 끝나면 solid
       topbar.classList.toggle('is-solid', y > heroHeight - 140);
@@ -1056,23 +1208,150 @@
     setHeaderState();
   };
 
+  const PARTNER_ROTATION = {
+    'mass-retail': [
+      'image/partners/imagepartnersmass-retail-1.jpg',
+      'image/partners/imagepartnersmass-retail-2.jpg',
+      'image/partners/imagepartnersmass-retail-3.jpg'
+    ],
+    'warehouse': [
+      'image/partners/imagepartnersmass-warehouse-1.jpg',
+      'image/partners/imagepartnersmass-warehouse-2.jpg',
+      'image/partners/imagepartnersmass-warehouse-3.jpg'
+    ],
+    'asiansu': [
+      'image/partners/imagepartnersmass-asiansu-1.jpg',
+      'image/partners/imagepartnersmass-asiansu-2.jpg',
+      'image/partners/imagepartnersmass-asiansu-3.jpg'
+    ],
+    'asianbeauty': [
+      'image/partners/imagepartnersmass-asianbeauty-1.jpg',
+      'image/partners/imagepartnersmass-asianbeauty-2.jpg',
+      'image/partners/imagepartnersmass-asianbeauty-3.jpg'
+    ],
+    'mainstream': [
+      'image/partners/imagepartnersmass-mainstream-1.jpg',
+      'image/partners/imagepartnersmass-mainstream-2.jpg',
+      'image/partners/imagepartnersmass-mainstream-3.jpg'
+    ],
+    'health': [
+      'image/partners/imagepartnersmass-health-1.jpg',
+      'image/partners/imagepartnersmass-health-2.jpg',
+      'image/partners/imagepartnersmass-health-3.jpg'
+    ],
+    'luxury': [
+      'image/partners/imagepartnersmass-luxury-1.jpg',
+      'image/partners/imagepartnersmass-luxury-2.jpg',
+      'image/partners/imagepartnersmass-luxury-3.jpg'
+    ],
+    'digital': [
+      'image/partners/imagepartnersmass-digital-1.jpg',
+      'image/partners/imagepartnersmass-digital-2.jpg',
+      'image/partners/imagepartnersmass-digital-3.jpg'
+    ]
+  };
+// 파트너
+  const imageExists = (src) =>
+    new Promise((resolve) => {
+      const img = new Image();
+      img.onload = () => resolve(src);
+      img.onerror = () => resolve(null);
+      img.src = src;
+    });
+
+  const getAvailableImages = async (list) => {
+    const checked = await Promise.all(list.map(imageExists));
+    return checked.filter(Boolean);
+  };
+
+  const initPartnerRotation = async () => {
+    const cards = document.querySelectorAll('.partner-network-card[data-partner]');
+
+    for (const card of cards) {
+      const key = card.dataset.partner;
+      const imageEl = card.querySelector('.partner-network-card__image');
+      const candidates = PARTNER_ROTATION[key];
+
+      if (!imageEl || !candidates?.length) continue;
+
+      const images = await getAvailableImages(candidates);
+      if (!images.length) continue;
+
+      let currentIndex = 0;
+      imageEl.style.backgroundImage = `url("${images[0]}")`;
+
+      if (images.length === 1) continue;
+
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        imageEl.style.backgroundImage = `url("${images[currentIndex]}")`;
+      }, 2000);
+    }
+  };
+
+  /* =========================================================
+     CASE STUDY CAROUSEL
+  ========================================================= */
+  const initCaseStudyCarousel = () => {
+    const track = document.getElementById('caseStudyTrack');
+    const viewport = track?.closest('.case-carousel__viewport');
+    const prev = document.getElementById('processPrev');
+    const next = document.getElementById('processNext');
+    if (!track || !viewport || !prev || !next) return;
+
+    const slides = Array.from(track.querySelectorAll('.event-card'));
+    if (!slides.length) return;
+
+    let currentIndex = 0;
+
+    const getVisibleCount = () => {
+      const width = window.innerWidth;
+      if (width <= 720) return 1;
+      if (width <= 1100) return 2;
+      return 4;
+    };
+
+    const update = () => {
+      const visibleCount = getVisibleCount();
+      const maxIndex = Math.max(slides.length - visibleCount, 0);
+      currentIndex = Math.min(currentIndex, maxIndex);
+
+      const firstSlide = slides[0];
+      const slideWidth = firstSlide ? firstSlide.getBoundingClientRect().width : 0;
+      const gap = 20;
+      const step = slideWidth + gap;
+
+      track.style.transform = `translateX(-${currentIndex * step}px)`;
+    };
+
+    prev.addEventListener('click', () => {
+      const visibleCount = getVisibleCount();
+      const maxIndex = Math.max(slides.length - visibleCount, 0);
+      currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+      update();
+    });
+
+    next.addEventListener('click', () => {
+      const visibleCount = getVisibleCount();
+      const maxIndex = Math.max(slides.length - visibleCount, 0);
+      currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+      update();
+    });
+
+    window.addEventListener('resize', update);
+    update();
+  };
+
   /* =========================================================
      BOOT
   ========================================================= */
   initIntroSplash();
   initSmartHeader();
-  initAboutTabs();
+  initHeroCounters();
   initBrandPreviews();
   initShowcaseCards();
+  initPartnerRotation();
+  initCaseStudyCarousel();
 </script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
