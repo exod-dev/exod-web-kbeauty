@@ -1666,26 +1666,20 @@ textarea {
   line-height: 1.75;
   color: rgba(255, 255, 255, 0.56);
 }
+/* =========================
+   REVIEWS SECTION
+========================= */
+
 .reviews-section {
-  padding: 0 0 110px;
-  background: linear-gradient(180deg, #f3eee8 0%, #ece6de 100%);
-  color: #131313;
+  padding: 86px 0 110px;
+  background: #0c0c0d;
+  color: #f5efe8;
 }
 
 .reviews-shell {
   display: flex;
   flex-direction: column;
   gap: 30px;
-}
-
-.reviews-topline {
-  padding-top: 6px;
-  font-size: 0.76rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: rgba(29, 29, 29, 0.34);
-  text-align: center;
 }
 
 .reviews-heading {
@@ -1701,7 +1695,7 @@ textarea {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   font-weight: 700;
-  color: rgba(29, 29, 29, 0.42);
+  color: rgba(245, 239, 232, 0.42);
 }
 
 .reviews-title {
@@ -1714,6 +1708,7 @@ textarea {
   display: block;
   font-size: clamp(2.35rem, 4vw, 3.8rem);
   font-weight: 800;
+  color: #f5efe8;
 }
 
 .reviews-title em {
@@ -1721,7 +1716,7 @@ textarea {
   font-size: clamp(2rem, 3.4vw, 3.15rem);
   font-style: italic;
   font-weight: 300;
-  color: rgba(19, 19, 19, 0.34);
+  color: rgba(245, 239, 232, 0.28);
 }
 
 .reviews-intro {
@@ -1729,7 +1724,7 @@ textarea {
   max-width: 450px;
   font-size: 0.9rem;
   line-height: 1.82;
-  color: rgba(19, 19, 19, 0.58);
+  color: rgba(245, 239, 232, 0.62);
 }
 
 .reviews-grid {
@@ -1742,9 +1737,10 @@ textarea {
   min-height: 250px;
   padding: 26px 24px 22px;
   border-radius: 26px;
-  background: #f8f5f1;
-  border: 1px solid rgba(19, 19, 19, 0.08);
-  box-shadow: 0 16px 36px rgba(48, 40, 33, 0.06);
+  background: #111111;
+  color: #f5efe8;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.24);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1754,10 +1750,10 @@ textarea {
 
 .review-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 22px 42px rgba(18, 18, 18, 0.18);
-  background: #0f0f10;
-  color: #f5efe8;
-  border-color: rgba(255, 255, 255, 0.08);
+  background: #f2ece5;
+  color: #151515;
+  border-color: rgba(21, 21, 21, 0.08);
+  box-shadow: 0 22px 42px rgba(48, 40, 33, 0.12);
 }
 
 .review-card__quote {
@@ -1774,12 +1770,12 @@ textarea {
   align-items: center;
   gap: 14px;
   padding-top: 18px;
-  border-top: 1px solid rgba(19, 19, 19, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   transition: border-color 0.28s ease;
 }
 
 .review-card:hover .review-card__meta {
-  border-color: rgba(255, 255, 255, 0.12);
+  border-top-color: rgba(21, 21, 21, 0.08);
 }
 
 .review-card__avatar {
@@ -1789,17 +1785,17 @@ textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(19, 19, 19, 0.08);
+  background: rgba(255, 255, 255, 0.12);
   font-size: 0.95rem;
   font-weight: 700;
-  color: #222222;
+  color: #f5efe8;
   flex: 0 0 auto;
   transition: background 0.28s ease, color 0.28s ease;
 }
 
 .review-card:hover .review-card__avatar {
-  background: rgba(255, 255, 255, 0.14);
-  color: #f5efe8;
+  background: rgba(21, 21, 21, 0.08);
+  color: #151515;
 }
 
 .review-card__meta strong,
@@ -1819,16 +1815,13 @@ textarea {
   margin-top: 4px;
   font-size: 0.8rem;
   line-height: 1.5;
-  color: rgba(19, 19, 19, 0.5);
+  color: rgba(245, 239, 232, 0.62);
   transition: color 0.28s ease;
 }
 
 .review-card:hover .review-card__meta div span {
-  color: rgba(245, 239, 232, 0.68);
+  color: rgba(21, 21, 21, 0.58);
 }
-
-
-
 
 .site-footer {
   padding: 38px 0 24px;
@@ -2059,6 +2052,9 @@ textarea {
 }
 
 @media (max-width: 720px) {
+  .reviews-section {
+    padding: 64px 0 84px;
+  }
   .topbar__inner,
   .container,
   .hero__content,
@@ -3891,6 +3887,7 @@ body.header-hero .brand span,
   transform: translateY(0);
 }
 
+
 @media (max-width: 1100px) {
   .process-heading--editorial {
     grid-template-columns: 1fr;
@@ -4018,5 +4015,136 @@ body.header-hero .brand span,
   .partner-network-section--brandwall .partner-brandwall-card--gallery img {
     max-width: 130px;
     max-height: 42px;
+  }
+}
+
+/* =============================================================
+   FINAL UNIFIED SECTION TITLE SYSTEM v3
+   제목 크기, 줄높이, kicker 간격 통일
+============================================================= */
+
+:root {
+  --section-title-first-size: clamp(4.65rem, 5.9vw, 5.35rem);
+  --section-title-second-size: clamp(3.75rem, 4.9vw, 4.45rem);
+}
+
+.brands-display,
+.opportunity-title,
+.partner-network-title,
+.process-title,
+.reviews-title {
+  margin: 0 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.07em !important;
+  text-transform: uppercase !important;
+}
+
+.brands-display span,
+.opportunity-title span,
+.opportunity-title--about span,
+.partner-network-title span,
+.process-title span,
+.process-section--brands .process-title span,
+.reviews-title span {
+  display: flex !important;
+  align-items: center !important;
+  min-height: 0.82em !important;
+  font-size: var(--section-title-first-size) !important;
+  line-height: 0.82 !important;
+  font-weight: 800 !important;
+  font-style: normal !important;
+  letter-spacing: -0.07em !important;
+}
+
+.brands-display em,
+.opportunity-title em,
+.opportunity-title--about em,
+.partner-network-title em,
+.process-title em,
+.process-section--brands .process-title em,
+.reviews-title em {
+  display: flex !important;
+  align-items: center !important;
+  min-height: 0.88em !important;
+  font-size: var(--section-title-second-size) !important;
+  line-height: 0.88 !important;
+  font-weight: 300 !important;
+  font-style: italic !important;
+  letter-spacing: -0.065em !important;
+}
+
+/* Light background section titles */
+.brands-display span,
+.process-section--brands .process-title span {
+  color: #111111 !important;
+}
+
+.brands-display em,
+.process-section--brands .process-title em {
+  color: rgba(17, 17, 17, 0.34) !important;
+}
+
+/* Dark background section titles */
+.opportunity-title span,
+.opportunity-title--about span,
+.partner-network-title span,
+.reviews-title span {
+  color: #f6f1eb !important;
+}
+
+.opportunity-title em,
+.opportunity-title--about em,
+.partner-network-title em,
+.reviews-title em {
+  color: rgba(246, 241, 235, 0.34) !important;
+}
+
+/* ABOUT US 앞 빨간 줄 제거 */
+.opportunity-kicker::before {
+  display: none !important;
+  content: none !important;
+}
+
+.opportunity-kicker {
+  gap: 0 !important;
+}
+
+/* kicker와 제목 사이 간격 통일 */
+.brands-kicker,
+.opportunity-kicker,
+.partner-network-kicker,
+.process-kicker,
+.reviews-kicker {
+  margin-bottom: 20px !important;
+}
+
+/* Recent Work에서 kicker와 제목이 너무 붙는 문제 보정 */
+.process-heading .process-kicker {
+  grid-column: auto !important;
+}
+
+.process-section--brands .process-kicker {
+  margin-bottom: 22px !important;
+}
+
+@media (max-width: 1100px) {
+  :root {
+    --section-title-first-size: clamp(3.8rem, 8vw, 4.6rem);
+    --section-title-second-size: clamp(3.15rem, 6.8vw, 3.85rem);
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --section-title-first-size: clamp(3rem, 12vw, 4rem);
+    --section-title-second-size: clamp(2.55rem, 10vw, 3.35rem);
+  }
+
+  .brands-kicker,
+  .opportunity-kicker,
+  .partner-network-kicker,
+  .process-kicker,
+  .reviews-kicker {
+    margin-bottom: 14px !important;
   }
 }
