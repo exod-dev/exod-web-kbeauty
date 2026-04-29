@@ -23,6 +23,8 @@
   --brands-accent-1: #111111;
   --brands-accent-2: #2f2f2f;
   --brands-overlay: rgba(16, 20, 28, 0.12);
+  --section-title-first-size: clamp(4.65rem, 5.9vw, 5.35rem);
+  --section-title-second-size: clamp(3.75rem, 4.9vw, 4.45rem);
 }
 
 * {
@@ -350,83 +352,94 @@ textarea {
   letter-spacing: 0.14em;
 }
 
+/* =========================
+   LOGO TICKER - seamless infinite logo strip
+========================= */
+
 .ticker-wrap {
   position: relative;
-  background: #050505;
-  overflow: hidden;
-  border-top: 2px solid rgba(255, 255, 255, 0.8);
-}
-
-.ticker-wrap::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.05) 0%,
-    transparent 28%,
-    transparent 72%,
-    rgba(255, 255, 255, 0.05) 100%
-  );
-  pointer-events: none;
-}
-
-.ticker-wrap::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
   width: 100%;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+  background: #050505;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.ticker-wrap::before,
+.ticker-wrap::after {
+  content: none;
+  display: none;
 }
 
 .ticker {
   display: flex;
   width: max-content;
-  animation: scroll 32s linear infinite;
+  animation: tickerScroll 38s linear infinite;
+  will-change: transform;
 }
 
 .ticker__group {
   display: flex;
   align-items: center;
-  gap: 24px;
-  padding: 18px 18px;
+  flex-shrink: 0;
+  gap: 44px;
+  padding: 18px 22px;
 }
 
-.ticker__item {
-  color: white;
-  font-size: 0.94rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  white-space: nowrap;
+.ticker__image {
+  display: block;
+  flex: 0 0 auto;
+  width: auto;
+  height: 34px;
+  max-width: 150px;
+  object-fit: contain;
+  opacity: 0.96;
+  mix-blend-mode: screen;
+  filter: grayscale(1) brightness(1.18) contrast(1.14);
 }
 
-.ticker__dot {
-  width: 16px;
-  height: 16px;
-  display: grid;
-  place-items: center;
-  color: var(--dark);
-  background: #ffffff;
-  border-radius: 5px;
-  transform: rotate(45deg);
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
+.ticker__image--wide {
+  max-width: 170px;
 }
 
-.ticker__dot span {
-  transform: rotate(-45deg);
-  font-size: 0.68rem;
-  font-weight: 800;
+.ticker__image--compact {
+  max-width: 120px;
 }
 
-@keyframes scroll {
+.ticker__pipe,
+.ticker__item,
+.ticker__dot,
+.ticker__emoji,
+.ticker__logo {
+  display: none !important;
+}
+
+@keyframes tickerScroll {
   from {
     transform: translateX(0);
   }
   to {
     transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 720px) {
+  .ticker__group {
+    gap: 30px;
+    padding: 15px 15px;
+  }
+
+  .ticker__image {
+    height: 28px;
+    max-width: 128px;
+  }
+
+  .ticker__image--wide {
+    max-width: 145px;
+  }
+
+  .ticker__image--compact {
+    max-width: 102px;
   }
 }
 
@@ -1227,12 +1240,6 @@ textarea {
   color: rgba(255, 255, 255, 0.42);
 }
 
-.opportunity-kicker::before {
-  content: "";
-  width: 36px;
-  height: 2px;
-  background: #d63333;
-}
 
 .opportunity-title {
   margin: 0;
@@ -1666,10 +1673,6 @@ textarea {
   line-height: 1.75;
   color: rgba(255, 255, 255, 0.56);
 }
-/* =========================
-   REVIEWS SECTION
-========================= */
-
 .reviews-section {
   padding: 86px 0 110px;
   background: #0c0c0d;
@@ -1679,18 +1682,19 @@ textarea {
 .reviews-shell {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 0;
 }
 
 .reviews-heading {
   display: grid;
   grid-template-columns: minmax(280px, 1fr) minmax(280px, 470px);
   gap: 28px;
-  align-items: end;
+  align-items: start;
+  margin-bottom: 50px;
 }
 
 .reviews-kicker {
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   font-size: 0.76rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -1700,28 +1704,43 @@ textarea {
 
 .reviews-title {
   margin: 0;
-  line-height: 0.92;
-  letter-spacing: -0.06em;
+  line-height: 1;
+  letter-spacing: -0.07em;
+  text-transform: uppercase;
 }
 
 .reviews-title span {
-  display: block;
-  font-size: clamp(2.35rem, 4vw, 3.8rem);
+  display: flex;
+  align-items: center;
+  min-height: 0.82em;
+  font-size: var(--section-title-first-size);
+  line-height: 0.82;
   font-weight: 800;
-  color: #f5efe8;
+  font-style: normal;
+  letter-spacing: -0.07em;
+  color: #f6f1eb;
 }
 
 .reviews-title em {
-  display: block;
-  font-size: clamp(2rem, 3.4vw, 3.15rem);
-  font-style: italic;
+  display: flex;
+  align-items: center;
+  min-height: 0.88em;
+  font-size: var(--section-title-second-size);
+  line-height: 0.88;
   font-weight: 300;
-  color: rgba(245, 239, 232, 0.28);
+  font-style: italic;
+  letter-spacing: -0.065em;
+  color: rgba(246, 241, 235, 0.34);
 }
 
 .reviews-intro {
-  margin: 0;
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  justify-self: end;
+  margin: 56px 0 0 auto !important;
   max-width: 450px;
+  padding-bottom: 0;
   font-size: 0.9rem;
   line-height: 1.82;
   color: rgba(245, 239, 232, 0.62);
@@ -1775,7 +1794,7 @@ textarea {
 }
 
 .review-card:hover .review-card__meta {
-  border-top-color: rgba(21, 21, 21, 0.08);
+  border-color: rgba(21, 21, 21, 0.08);
 }
 
 .review-card__avatar {
@@ -1798,16 +1817,11 @@ textarea {
   color: #151515;
 }
 
-.review-card__meta strong,
-.review-card:hover .review-card__quote,
-.review-card:hover .review-card__meta strong {
-  color: inherit;
-}
-
 .review-card__meta strong {
   display: block;
   font-size: 0.92rem;
   line-height: 1.2;
+  color: inherit;
 }
 
 .review-card__meta div span {
@@ -1817,6 +1831,12 @@ textarea {
   line-height: 1.5;
   color: rgba(245, 239, 232, 0.62);
   transition: color 0.28s ease;
+}
+
+.review-card:hover .review-card__quote,
+.review-card:hover .review-card__meta strong,
+.review-card:hover .review-card__meta div {
+  color: #151515;
 }
 
 .review-card:hover .review-card__meta div span {
@@ -2052,9 +2072,6 @@ textarea {
 }
 
 @media (max-width: 720px) {
-  .reviews-section {
-    padding: 64px 0 84px;
-  }
   .topbar__inner,
   .container,
   .hero__content,
@@ -3128,79 +3145,6 @@ body.header-hero .brand span,
   transform: scaleX(1);
 }
 
-.ticker-wrap {
-  background: #050505;
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: none;
-}
-
-.ticker-wrap::before {
-  background: linear-gradient(90deg, #050505 0%, rgba(5, 5, 5, 0) 16%, rgba(5, 5, 5, 0) 84%, #050505 100%);
-}
-
-.ticker-wrap::after {
-  display: block;
-  content: "";
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.12);
-  pointer-events: none;
-}
-
-.ticker__group {
-  display: flex;
-  align-items: center;
-  gap: 42px;
-  padding: 22px 0;
-}
-
-.ticker {
-  display: flex;
-  width: max-content;
-  animation: scroll-delayed 52s linear infinite;
-}
-
-.ticker__item,
-.ticker__dot,
-.ticker__emoji,
-.ticker__logo {
-  display: none !important;
-}
-
-.ticker__image {
-  flex: 0 0 auto;
-  height: 44px;
-  width: auto;
-  display: block;
-  opacity: 0.98;
-  object-fit: contain;
-  mix-blend-mode: screen;
-  filter: grayscale(1) brightness(1.18) contrast(1.16);
-}
-
-.ticker__image--wide {
-  height: 48px;
-}
-
-.ticker__image--compact {
-  height: 38px;
-}
-
-.ticker__pipe {
-  display: none;
-}
-
-@keyframes scroll-delayed {
-  from {
-    transform: translateX(35%);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
 .brands-modal__header {
   display: flex;
   align-items: center;
@@ -3325,7 +3269,7 @@ body.header-hero .brand span,
   width: 100%;
   max-width: 340px;
   justify-self: end;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 0;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
   overflow: hidden;
   box-shadow: 0 28px 60px rgba(0, 0, 0, 0.24);
@@ -3887,7 +3831,6 @@ body.header-hero .brand span,
   transform: translateY(0);
 }
 
-
 @media (max-width: 1100px) {
   .process-heading--editorial {
     grid-template-columns: 1fr;
@@ -4019,24 +3962,17 @@ body.header-hero .brand span,
 }
 
 /* =============================================================
-   FINAL UNIFIED SECTION TITLE SYSTEM v3
-   제목 크기, 줄높이, kicker 간격 통일
+   UNIFIED SECTION TITLE SYSTEM
 ============================================================= */
-
-:root {
-  --section-title-first-size: clamp(4.65rem, 5.9vw, 5.35rem);
-  --section-title-second-size: clamp(3.75rem, 4.9vw, 4.45rem);
-}
 
 .brands-display,
 .opportunity-title,
 .partner-network-title,
-.process-title,
-.reviews-title {
-  margin: 0 !important;
-  line-height: 1 !important;
-  letter-spacing: -0.07em !important;
-  text-transform: uppercase !important;
+.process-title {
+  margin: 0;
+  line-height: 1;
+  letter-spacing: -0.07em;
+  text-transform: uppercase;
 }
 
 .brands-display span,
@@ -4044,16 +3980,15 @@ body.header-hero .brand span,
 .opportunity-title--about span,
 .partner-network-title span,
 .process-title span,
-.process-section--brands .process-title span,
-.reviews-title span {
-  display: flex !important;
-  align-items: center !important;
-  min-height: 0.82em !important;
-  font-size: var(--section-title-first-size) !important;
-  line-height: 0.82 !important;
-  font-weight: 800 !important;
-  font-style: normal !important;
-  letter-spacing: -0.07em !important;
+.process-section--brands .process-title span {
+  display: flex;
+  align-items: center;
+  min-height: 0.82em;
+  font-size: var(--section-title-first-size);
+  line-height: 0.82;
+  font-weight: 800;
+  font-style: normal;
+  letter-spacing: -0.07em;
 }
 
 .brands-display em,
@@ -4061,76 +3996,80 @@ body.header-hero .brand span,
 .opportunity-title--about em,
 .partner-network-title em,
 .process-title em,
-.process-section--brands .process-title em,
-.reviews-title em {
-  display: flex !important;
-  align-items: center !important;
-  min-height: 0.88em !important;
-  font-size: var(--section-title-second-size) !important;
-  line-height: 0.88 !important;
-  font-weight: 300 !important;
-  font-style: italic !important;
-  letter-spacing: -0.065em !important;
+.process-section--brands .process-title em {
+  display: flex;
+  align-items: center;
+  min-height: 0.88em;
+  font-size: var(--section-title-second-size);
+  line-height: 0.88;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: -0.065em;
 }
 
-/* Light background section titles */
 .brands-display span,
 .process-section--brands .process-title span {
-  color: #111111 !important;
+  color: #111111;
 }
 
 .brands-display em,
 .process-section--brands .process-title em {
-  color: rgba(17, 17, 17, 0.34) !important;
+  color: rgba(17, 17, 17, 0.34);
 }
 
-/* Dark background section titles */
 .opportunity-title span,
 .opportunity-title--about span,
-.partner-network-title span,
-.reviews-title span {
-  color: #f6f1eb !important;
+.partner-network-title span {
+  color: #f6f1eb;
 }
 
 .opportunity-title em,
 .opportunity-title--about em,
-.partner-network-title em,
-.reviews-title em {
-  color: rgba(246, 241, 235, 0.34) !important;
+.partner-network-title em {
+  color: rgba(246, 241, 235, 0.34);
 }
 
-/* ABOUT US 앞 빨간 줄 제거 */
 .opportunity-kicker::before {
-  display: none !important;
-  content: none !important;
+  display: none;
+  content: none;
 }
 
 .opportunity-kicker {
-  gap: 0 !important;
+  gap: 0;
 }
 
-/* kicker와 제목 사이 간격 통일 */
 .brands-kicker,
 .opportunity-kicker,
 .partner-network-kicker,
-.process-kicker,
-.reviews-kicker {
-  margin-bottom: 20px !important;
+.process-kicker {
+  margin-bottom: 20px;
 }
 
-/* Recent Work에서 kicker와 제목이 너무 붙는 문제 보정 */
 .process-heading .process-kicker {
-  grid-column: auto !important;
+  grid-column: auto;
 }
 
 .process-section--brands .process-kicker {
-  margin-bottom: 22px !important;
+  margin-bottom: 22px;
 }
 
 @media (max-width: 1100px) {
   :root {
     --section-title-first-size: clamp(3.8rem, 8vw, 4.6rem);
     --section-title-second-size: clamp(3.15rem, 6.8vw, 3.85rem);
+  }
+
+  .reviews-heading {
+    grid-template-columns: 1fr;
+    margin-bottom: 30px;
+  }
+
+  .reviews-intro {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+    margin: 0 !important;
+    max-width: none;
   }
 }
 
@@ -4145,6 +4084,8 @@ body.header-hero .brand span,
   .partner-network-kicker,
   .process-kicker,
   .reviews-kicker {
-    margin-bottom: 14px !important;
+    margin-bottom: 14px;
   }
+
 }
+
