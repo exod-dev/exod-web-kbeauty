@@ -1351,7 +1351,16 @@
       'image/partners/imagepartnersmass-digital-3.jpg'
     ]
   };
-// 파트너
+
+  /* =========================================================
+     RETAIL PARTNERS - synced page-turn transition
+     전체 카드가 같이 1 -> 2 -> 3으로 바뀌고 끝남
+  ========================================================= */
+  const PARTNER_HOLD_TIME = 8000;  //정지
+  const PARTNER_TRANSITION_TIME = 7000; //바뀌는거
+  const PARTNER_TOTAL_SCENES = 3;
+  const PARTNER_EFFECT = 'soft'; // 'page' 또는 'soft'
+
   const imageExists = (src) =>
     new Promise((resolve) => {
       const img = new Image();
@@ -1366,7 +1375,13 @@
   };
 
   const initPartnerRotation = async () => {
-    const cards = document.querySelectorAll('.partner-network-card[data-partner]');
+    const section = document.querySelector('.partner-network-section#partners');
+    const grid = section?.querySelector('.partner-network-grid');
+    const cards = Array.from(document.querySelectorAll('.partner-network-card[data-partner]'));
+
+    if (!section || !grid || !cards.length) return;
+
+    const cardStates = [];
 
     for (const card of cards) {
       const key = card.dataset.partner;
@@ -1378,19 +1393,87 @@
       const images = await getAvailableImages(candidates);
       if (!images.length) continue;
 
-      let currentIndex = 0;
-      imageEl.style.backgroundImage = `url("${images[0]}")`;
+      imageEl.innerHTML = `
+        <span class="partner-network-card__bg partner-network-card__bg--a is-active"></span>
+        <span class="partner-network-card__bg partner-network-card__bg--b"></span>
+      `;
 
-      if (images.length === 1) continue;
+      const layers = imageEl.querySelectorAll('.partner-network-card__bg');
 
-      setInterval(() => {
-        currentIndex = (currentIndex + 1) % images.length;
-        imageEl.style.backgroundImage = `url("${images[currentIndex]}")`;
-      }, 2000);
+      layers[0].style.backgroundImage = `url("${images[0]}")`;
+      layers[1].style.backgroundImage = `url("${images[1] || images[0]}")`;
+
+      cardStates.push({
+        card,
+        imageEl,
+        images,
+        layers,
+        activeLayer: 0
+      });
     }
-  };
 
-  /* =========================================================
+    if (!cardStates.length) return;
+
+    let globalSceneIndex = 0;
+    let hasStarted = false;
+
+    const changeScene = () => {
+      if (globalSceneIndex >= PARTNER_TOTAL_SCENES - 1) {
+        grid.classList.add('is-partner-rotation-done');
+        return;
+      }
+
+      globalSceneIndex += 1;
+      grid.classList.add('is-partner-scene-changing');
+      grid.dataset.partnerEffect = PARTNER_EFFECT;
+
+      cardStates.forEach((state) => {
+        const nextLayer = state.activeLayer === 0 ? 1 : 0;
+        const currentLayer = state.activeLayer;
+        const nextImage = state.images[globalSceneIndex % state.images.length] || state.images[0];
+
+        state.layers[nextLayer].style.backgroundImage = `url("${nextImage}")`;
+        state.layers[nextLayer].classList.remove('is-leaving', 'is-active', 'is-entering');
+        state.layers[currentLayer].classList.remove('is-entering');
+
+        requestAnimationFrame(() => {
+          state.layers[currentLayer].classList.add('is-leaving');
+          state.layers[nextLayer].classList.add('is-active', 'is-entering');
+        });
+
+        state.activeLayer = nextLayer;
+      });
+
+      window.setTimeout(() => {
+        cardStates.forEach((state) => {
+          const inactiveLayer = state.activeLayer === 0 ? 1 : 0;
+          state.layers[state.activeLayer].classList.remove('is-entering');
+          state.layers[inactiveLayer].classList.remove('is-active', 'is-leaving', 'is-entering');
+        });
+
+        grid.classList.remove('is-partner-scene-changing');
+      }, PARTNER_TRANSITION_TIME + 80);
+
+      if (globalSceneIndex < PARTNER_TOTAL_SCENES - 1) {
+        window.setTimeout(changeScene, PARTNER_HOLD_TIME + PARTNER_TRANSITION_TIME);
+      } else {
+        window.setTimeout(() => {
+          grid.classList.add('is-partner-rotation-done');
+        }, PARTNER_TRANSITION_TIME + 120);
+      }
+    };
+
+    const start = () => {
+      if (hasStarted) return;
+      hasStarted = true;
+      window.setTimeout(changeScene, PARTNER_HOLD_TIME);
+    };
+
+    start();
+
+    observer.observe(section);
+  };
+    /* =========================================================
      CASE STUDY CAROUSEL
   ========================================================= */
   const initCaseStudyCarousel = () => {

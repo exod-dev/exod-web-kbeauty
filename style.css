@@ -2953,11 +2953,61 @@ body.header-hero.header-hover .topbar .nav-cta .btn--dark {
 
 .partner-network-card__image {
   z-index: 1;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  transform: scale(1);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transition:
+      opacity 4.2s ease-in-out,
+      transform 5.2s ease,
+      filter 4.2s ease-in-out;
+}
+
+.partner-network-card__bg.is-active {
+  opacity: 1;
   transform: scale(1);
-  transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1), filter 0.45s ease;
+  filter: brightness(1);
+}
+
+.partner-network-card__bg.is-leaving {
+  opacity: 0;
+  transform: scale(1.012);
+  filter: brightness(0.9);
+}
+
+.partner-network-card__bg.is-entering {
+  opacity: 1;
+  transform: scale(1);
+  filter: brightness(1);
+}
+
+.partner-network-card:hover .partner-network-card__image {
+  transform: scale(1.02);
+  filter: saturate(1.02);
+}
+
+.partner-network-card__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  opacity: 0;
+  transform: scale(1.025);
+  filter: brightness(0.9);
+
+  transition:
+    opacity 7s ease-in-out,
+    transform 8.5s ease,
+    filter 7s ease-in-out;
 }
 
 .partner-network-card:hover .partner-network-card__image {
