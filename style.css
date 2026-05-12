@@ -4352,8 +4352,72 @@ body.header-hero .brand span,
   }
 }
 
+.hero {
+  position: relative;
+}
+
+.hero__hotspots {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.hero__hotspot {
+  position: absolute;
+  display: block;
+  pointer-events: auto;
+  cursor: pointer;
+
+  color: transparent;
+  font-size: 0;
+  text-indent: -9999px;
+  overflow: hidden;
+
+  /* 위치 잡을 때만 보이게 */
+  background: transparent;
+}
+
+/* =========================
+   PC 클릭 영역
+========================= */
+
+/* PC - Explore Brands */
+.hero__hotspot--brands {
+  left: 77.8%;
+  top: 53.6%;
+  width: 16.8%;
+  height: 6.5%;
+}
+
+/* PC - Become a Partner */
+.hero__hotspot--partner {
+  left: 77.8%;
+  top: 63.9%;
+  width: 16.8%;
+  height: 7.8%;
+}
+
+/* =========================
+   Mobile 클릭 영역
+========================= */
+
 @media (max-width: 768px) {
   .hero__stats {
-    display: none;
+    display: none !important;
+  }
+
+  .hero__hotspot--brands {
+    left: 5.5% !important;
+    top: 51.8% !important;
+    width: 38% !important;
+    height: 5.2% !important;
+  }
+
+  .hero__hotspot--partner {
+    left: 5.5% !important;
+    top: 57.8% !important;
+    width: 38% !important;
+    height: 5.3% !important;
   }
 }
