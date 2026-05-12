@@ -3064,6 +3064,243 @@ body.header-hero.header-hover .topbar .nav-cta .btn--dark{
   }
 }
 
+.partner-network-section--gallery-test{
+  padding-top: 0;
+}
+
+.partner-gallery-grid{
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-auto-rows: 86px;
+  grid-auto-flow: dense;
+  gap: 12px;
+}
+
+.partner-gallery-card{
+  position: relative;
+  min-height: 0;
+  grid-row: span 2;
+  overflow: hidden;
+  isolation: isolate;
+  background: #161616;
+  color: #ffffff;
+}
+
+.partner-gallery-card--wide{
+  grid-column: span 2;
+}
+
+.partner-gallery-card--tall{
+  grid-row: span 4;
+}
+
+.partner-gallery-card:nth-child(1){
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+.partner-gallery-card:nth-child(2){
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 2;
+}
+
+.partner-gallery-card:nth-child(3){
+  grid-column: 4 / span 1;
+  grid-row: 1 / span 2;
+}
+
+.partner-gallery-card:nth-child(4){
+  grid-column: 5 / span 2;
+  grid-row: 1 / span 2;
+}
+
+.partner-gallery-card:nth-child(5){
+  grid-column: 1 / span 2;
+  grid-row: 3 / span 2;
+}
+
+.partner-gallery-card:nth-child(6){
+  grid-column: 3 / span 1;
+  grid-row: 3 / span 2;
+}
+
+.partner-gallery-card:nth-child(7){
+  grid-column: 4 / span 2;
+  grid-row: 3 / span 2;
+}
+
+.partner-gallery-card:nth-child(8){
+  grid-column: 6 / span 1;
+  grid-row: 3 / span 2;
+}
+
+.partner-gallery-card:nth-child(9){
+  grid-column: 1 / span 1;
+  grid-row: 5 / span 2;
+}
+
+.partner-gallery-card:nth-child(10){
+  grid-column: 2 / span 1;
+  grid-row: 5 / span 2;
+}
+
+.partner-gallery-card:nth-child(11){
+  grid-column: 3 / span 2;
+  grid-row: 5 / span 2;
+}
+
+.partner-gallery-card:nth-child(12){
+  grid-column: 5 / span 1;
+  grid-row: 5 / span 2;
+}
+
+.partner-gallery-card:nth-child(13){
+  grid-column: 6 / span 1;
+  grid-row: 5 / span 2;
+}
+
+.partner-gallery-card:nth-child(14){
+  grid-column: 6 / span 1;
+  grid-row: 7 / span 2;
+}
+
+.partner-gallery-card:nth-child(15){
+  grid-column: 1 / span 1;
+  grid-row: 7 / span 2;
+}
+
+.partner-gallery-card:nth-child(16){
+  grid-column: 2 / span 2;
+  grid-row: 7 / span 2;
+}
+
+.partner-gallery-card:nth-child(17){
+  grid-column: 4 / span 2;
+  grid-row: 7 / span 2;
+}
+
+.partner-gallery-card img,
+.partner-gallery-card__overlay,
+.partner-gallery-card__copy{
+  position: absolute;
+  inset: 0;
+}
+
+.partner-gallery-card img{
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transform: scale(1.04);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.partner-gallery-card__overlay{
+  z-index: 2;
+  background:
+    linear-gradient(180deg, rgba(5, 5, 5, 0.02) 0%, rgba(5, 5, 5, 0.14) 38%, rgba(5, 5, 5, 0.84) 100%);
+}
+
+.partner-gallery-card__copy{
+  z-index: 3;
+  inset: auto 0 0 0;
+  display: grid;
+  gap: 8px;
+  padding: clamp(14px, 1.35vw, 20px);
+}
+
+.partner-gallery-card__copy h3,
+.partner-gallery-card__copy p{
+  margin: 0;
+  color: #ffffff;
+  text-shadow: 0 14px 28px rgba(0, 0, 0, 0.42);
+}
+
+.partner-gallery-card__copy h3{
+  font-size: clamp(1.12rem, 1.46vw, 1.5rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  font-weight: 850;
+  overflow-wrap: anywhere;
+}
+
+.partner-gallery-card--wide .partner-gallery-card__copy h3,
+.partner-gallery-card--tall .partner-gallery-card__copy h3{
+  font-size: clamp(1.32rem, 1.95vw, 2rem);
+}
+
+.partner-gallery-card__copy p{
+  max-width: 100%;
+  font-size: 0.62rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  overflow-wrap: normal;
+}
+
+.partner-gallery-card:hover img{
+  transform: scale(1.075);
+  filter: saturate(1.05) brightness(1.02);
+}
+
+.partner-gallery-card:nth-child(1) img,
+.partner-gallery-card:nth-child(4) img,
+.partner-gallery-card:nth-child(8) img,
+.partner-gallery-card:nth-child(11) img,
+.partner-gallery-card:nth-child(14) img,
+.partner-gallery-card:nth-child(16) img,
+.partner-gallery-card:nth-child(17) img{
+  transform: scale(1.02);
+}
+
+@media (max-width: 1100px) {
+  .partner-gallery-grid{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 84px;
+  }
+
+  .partner-gallery-card:nth-child(n){
+    grid-column: auto;
+    grid-row: span 2;
+  }
+
+  .partner-gallery-card--wide{
+    grid-column: span 2;
+  }
+
+  .partner-gallery-card--tall{
+    grid-row: span 3;
+  }
+}
+
+@media (max-width: 720px) {
+  .partner-gallery-grid{
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 16px;
+  }
+
+  .partner-gallery-card,
+  .partner-gallery-card--wide,
+  .partner-gallery-card--tall{
+    min-height: 220px;
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  .partner-gallery-card:nth-child(n){
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  .partner-gallery-card__copy{
+    padding: 18px;
+  }
+}
+
 /* =========================
    FINAL OVERRIDES
 ========================= */
@@ -3282,12 +3519,13 @@ body.header-hero .brand span,
 }
 
 .partner-directory-logo{
+  width: 150px;
   min-width: 150px;
   height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 18px;
+  padding: 0;
   border: 1px solid rgba(255, 255, 255, 0.06);
   background: #ffffff;
   overflow: hidden;
@@ -3297,11 +3535,25 @@ body.header-hero .brand span,
   display: block;
   width: 100%;
   height: 100%;
-  max-width: 190px;
-  max-height: 62px;
   object-fit: contain;
   object-position: center center;
   filter: none;
+  transform: scale(1.22);
+}
+
+.partner-directory-logo img[src*="holt"],
+.partner-directory-logo img[src*="wellca"]{
+  transform: scale(1.34);
+}
+
+.partner-directory-logo img[src*="shoppers"],
+.partner-directory-logo img[src*="loblaws"],
+.partner-directory-logo img[src*="kiokii"],
+.partner-directory-logo img[src*="superstore"],
+.partner-directory-logo img[src*="oomomo"],
+.partner-directory-logo img[src*="rennai"],
+.partner-directory-logo img[src*="walmart_marketplace"]{
+  transform: scale(1);
 }
 
 @media (max-width: 1100px) {
@@ -3317,6 +3569,7 @@ body.header-hero .brand span,
   }
 
   .partner-directory-logo{
+    width: calc(50% - 6px);
     min-width: calc(50% - 6px);
     height: 78px;
   }
