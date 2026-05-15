@@ -4421,3 +4421,9 @@ body.header-hero .brand span,
     height: 5.3% !important;
   }
 }
+
+.opportunity-copy--wide {
+  text-align: right;
+  justify-self: end;
+  margin-left: auto;
+}
